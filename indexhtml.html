@@ -1,0 +1,1616 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>蕭捷健減重課 — Trailer 分鏡示意圖 v3</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=DM+Mono:wght@400;500&family=Bebas+Neue&display=swap');
+  :root {
+    --bg: #0e0e0e; --bg-card: #161616; --bg-card-hover: #1c1c1c;
+    --border: #2a2a2a; --accent: #c8f135; --accent-dim: rgba(200,241,53,0.15);
+    --red: #ff4444; --blue: #4da6ff; --orange: #ff8c42;
+    --white: #f0f0f0; --muted: #666; --muted2: #444;
+    --pain: #ff4444; --struggle: #ff8c42; --turn: #c8f135; --solution: #4da6ff;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--white); font-family: 'Noto Sans TC', sans-serif; }
+
+  .header { padding: 48px 48px 32px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; }
+  .header-left h1 { font-family: 'Bebas Neue', sans-serif; font-size: 42px; letter-spacing: 2px; line-height: 1; }
+  .header-left h1 span { color: var(--accent); }
+  .header-left p { margin-top: 8px; color: var(--muted); font-size: 13px; font-family: 'DM Mono', monospace; letter-spacing: 1px; }
+  .header-meta { display: flex; gap: 24px; flex-shrink: 0; }
+  .meta-item { text-align: right; }
+  .meta-item .val { font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: var(--accent); line-height: 1; }
+  .meta-item .label { font-size: 11px; color: var(--muted); letter-spacing: 1px; margin-top: 2px; }
+
+  .phase-label { padding: 28px 48px 14px; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 3px; color: var(--muted); text-transform: uppercase; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 12px; }
+  .phase-label::before { content: ''; display: inline-block; width: 24px; height: 1px; background: var(--accent); }
+
+  .scene-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1px; background: var(--border); border-top: 1px solid var(--border); }
+  .scene-card { background: var(--bg-card); transition: background 0.2s; }
+  .scene-card:hover { background: var(--bg-card-hover); }
+
+  .segment-strip { height: 3px; width: 100%; }
+  .seg-pain { background: var(--pain); }
+  .seg-struggle { background: var(--struggle); }
+  .seg-turn { background: var(--turn); }
+  .seg-solution { background: var(--solution); }
+  .seg-cta { background: var(--turn); }
+  .seg-brand { background: var(--muted2); }
+  .seg-identity { background: var(--accent); }
+
+  .scene-visual { height: 200px; position: relative; overflow: hidden; background: #111; }
+  .scene-visual svg { width: 100%; height: 100%; }
+
+  .scene-info { padding: 14px 18px 18px; border-top: 1px solid var(--border); }
+  .scene-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .scene-num { font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: var(--accent); letter-spacing: 1px; }
+  .scene-badges { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
+  .badge { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.5px; padding: 3px 8px; border-radius: 2px; background: var(--border); color: var(--muted); }
+  .badge.time { color: var(--accent); background: var(--accent-dim); }
+  .badge.type-口播 { color: var(--blue); background: rgba(77,166,255,0.12); }
+  .badge.type-簡報 { color: var(--orange); background: rgba(255,140,66,0.12); }
+  .badge.type-Broll { color: #a78bfa; background: rgba(167,139,250,0.12); }
+  .badge.type-分割 { color: #34d399; background: rgba(52,211,153,0.12); }
+  .badge.type-主視覺 { color: var(--accent); background: var(--accent-dim); }
+  .badge.type-品牌 { color: var(--accent); background: var(--accent-dim); }
+
+  .camera-code { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted); margin-bottom: 8px; }
+  .scene-vo { font-size: 13px; line-height: 1.6; color: #ccc; margin-bottom: 10px; font-style: italic; border-left: 2px solid var(--muted2); padding-left: 10px; }
+  .scene-post { font-size: 12px; color: var(--accent); font-family: 'DM Mono', monospace; line-height: 1.6; }
+
+  .legend { padding: 48px; border-top: 1px solid var(--border); display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 32px; }
+  .legend-section h3 { font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 1px; color: var(--accent); margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+  .legend-item { display: flex; gap: 12px; padding: 5px 0; font-size: 12px; color: #aaa; }
+  .legend-code { font-family: 'DM Mono', monospace; color: var(--white); min-width: 70px; }
+
+  .hl-system { padding: 32px 48px; border-top: 1px solid var(--border); }
+  .hl-system h3 { font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 2px; color: var(--accent); margin-bottom: 16px; }
+  .hl-row { display: flex; gap: 10px; flex-wrap: wrap; }
+  .hl-chip { padding: 6px 16px; border-radius: 3px; font-size: 12px; font-family: 'DM Mono', monospace; }
+
+  .footer { padding: 24px 48px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+  .footer-left { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted); letter-spacing: 1px; }
+  .footer-right { font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: var(--muted2); letter-spacing: 2px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <h1>蕭捷健<span> ✕ </span>減重課</h1>
+    <p>TRAILER STORYBOARD · PHASE 2 · V3</p>
+  </div>
+  <div class="header-meta">
+    <div class="meta-item"><div class="val">29</div><div class="label">SCENES</div></div>
+    <div class="meta-item"><div class="val">87"</div><div class="label">DURATION</div></div>
+
+  </div>
+</div>
+
+<!-- PART 01 痛點 -->
+<div class="phase-label">PART 01 · 痛點 &amp; 破題</div>
+<div class="scene-grid">
+
+
+  <!-- 01 -->
+  <div class="scene-card">
+    <div class="segment-strip seg-pain"></div>
+    <div class="scene-visual"><svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">
+      <defs><radialGradient id="kl01" cx="50%" cy="0%" r="60%"><stop offset="0%" style="stop-color:#fff;stop-opacity:0.04"/><stop offset="100%" style="stop-color:#000;stop-opacity:0"/></radialGradient></defs>
+      
+      <!-- 空間背景 深度感 -->
+      <!-- 後牆 -->
+      <rect width="340" height="200" fill="#0e0e0e"/>
+      <!-- 地板透視 -->
+      <path d="M0,200 L0,145 L170,120 L340,145 L340,200 Z" fill="#131310"/>
+      <!-- 左牆透視 -->
+      <path d="M0,0 L0,145 L170,120 L170,0 Z" fill="#111111"/>
+      <!-- 右牆透視 -->
+      <path d="M340,0 L340,145 L170,120 L170,0 Z" fill="#0f0f0f"/>
+      <!-- 後牆水平線 -->
+      <line x1="0" y1="120" x2="340" y2="120" stroke="#1e1e1e" stroke-width="1"/>
+      <!-- 左側陳設：書櫃/架子 -->
+      <rect x="0" y="20" width="52" height="118" rx="2" fill="#141412" stroke="#1e1e1a" stroke-width="1"/>
+      <rect x="4" y="26" width="44" height="14" rx="1" fill="#1a1a18"/>
+      <rect x="4" y="44" width="44" height="14" rx="1" fill="#181816"/>
+      <rect x="4" y="62" width="44" height="14" rx="1" fill="#1a1a18"/>
+      <rect x="4" y="80" width="44" height="14" rx="1" fill="#161614"/>
+      <rect x="4" y="98" width="44" height="14" rx="1" fill="#1a1a18"/>
+      <!-- 書本 小色塊 -->
+      <rect x="6" y="28" width="6" height="10" rx="1" fill="#2a1a10"/>
+      <rect x="14" y="28" width="5" height="10" rx="1" fill="#0a1a2a"/>
+      <rect x="21" y="28" width="7" height="10" rx="1" fill="#1a2a10"/>
+      <rect x="30" y="28" width="5" height="10" rx="1" fill="#2a2a0a"/>
+      <rect x="6" y="46" width="8" height="10" rx="1" fill="#0a2a1a"/>
+      <rect x="16" y="46" width="6" height="10" rx="1" fill="#2a1a18"/>
+      <rect x="24" y="46" width="7" height="10" rx="1" fill="#1a1a2a"/>
+      <!-- 右側陳設：小植栽/燈 -->
+      <rect x="288" y="60" width="52" height="78" rx="2" fill="#121210" stroke="#1e1e1c" stroke-width="1"/>
+      <!-- 植栽 -->
+      <ellipse cx="314" cy="68" rx="16" ry="10" fill="#0a1a08"/>
+      <path d="M306,68 Q310,52 314,48 Q318,52 322,68" fill="#0e240a"/>
+      <path d="M308,65 Q305,54 308,50 Q312,56 310,65" fill="#0a1e08"/>
+      <rect x="310" y="70" width="8" height="14" rx="2" fill="#1a120a"/>
+      <!-- 燈光暈 上方打光 -->
+      <radialGradient id="kl01x" cx="50%" cy="0%" r="60%">
+        <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.04"/>
+        <stop offset="100%" style="stop-color:#000000;stop-opacity:0"/>
+      </radialGradient>
+      <rect width="340" height="200" fill="url(#kl01x)"/>
+      
+      <!-- 椅子 低矮椅背 + 椅腳 -->
+      <!-- 椅座 -->
+      <rect x="140" y="130" width="60" height="12" rx="3" fill="#1a1814" stroke="#1e1c16"/>
+      <!-- 椅背 (矮，只到肩膀) -->
+      <rect x="146" y="100" width="48" height="34" rx="3" fill="#161412" stroke="#1e1c16"/>
+      <!-- 椅腳 四支 -->
+      <line x1="146" y1="142" x2="142" y2="190" stroke="#111" stroke-width="5" stroke-linecap="round"/>
+      <line x1="194" y1="142" x2="198" y2="190" stroke="#111" stroke-width="5" stroke-linecap="round"/>
+      <!-- 前椅腳 -->
+      <line x1="154" y1="142" x2="150" y2="190" stroke="#141210" stroke-width="4" stroke-linecap="round"/>
+      <line x1="186" y1="142" x2="190" y2="190" stroke="#141210" stroke-width="4" stroke-linecap="round"/>
+      <!-- 人 坐姿 MS -->
+      <circle cx="170" cy="62" r="22" fill="#2a2820"/>
+      <rect x="148" y="86" width="44" height="48" rx="4" fill="#2a2820"/>
+      <!-- 肩膀 -->
+      <ellipse cx="142" cy="92" rx="12" ry="8" fill="#2a2820"/>
+      <ellipse cx="198" cy="92" rx="12" ry="8" fill="#2a2820"/>
+      <!-- 頸部 -->
+      <rect x="162" y="83" width="16" height="9" rx="3" fill="#2a2820"/>
+    </svg></div>
+    <div class="scene-info">
+      <div class="scene-top"><span class="scene-num">#01</span><div class="scene-badges"><span class="badge type-口播">口播景</span><span class="badge time">2"</span></div></div>
+      <div class="camera-code">MS · Static</div>
+      <div class="scene-vo">「大家都說少吃多動瘦最快，」</div>
+      <div class="scene-post">highlight → 少吃多動 · 重點色</div>
+    </div>
+  </div>
+
+  <!-- 02 -->
+  <div class="scene-card">
+    <div class="segment-strip seg-pain"></div>
+    <div class="scene-visual"><svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">
+      
+      <!-- 空間背景 深度感 -->
+      <!-- 後牆 -->
+      <rect width="340" height="200" fill="#0e0e0e"/>
+      <!-- 地板透視 -->
+      <path d="M0,200 L0,145 L170,120 L340,145 L340,200 Z" fill="#131310"/>
+      <!-- 左牆透視 -->
+      <path d="M0,0 L0,145 L170,120 L170,0 Z" fill="#111111"/>
+      <!-- 右牆透視 -->
+      <path d="M340,0 L340,145 L170,120 L170,0 Z" fill="#0f0f0f"/>
+      <!-- 後牆水平線 -->
+      <line x1="0" y1="120" x2="340" y2="120" stroke="#1e1e1e" stroke-width="1"/>
+      <!-- 左側陳設：書櫃/架子 -->
+      <rect x="0" y="20" width="52" height="118" rx="2" fill="#141412" stroke="#1e1e1a" stroke-width="1"/>
+      <rect x="4" y="26" width="44" height="14" rx="1" fill="#1a1a18"/>
+      <rect x="4" y="44" width="44" height="14" rx="1" fill="#181816"/>
+      <rect x="4" y="62" width="44" height="14" rx="1" fill="#1a1a18"/>
+      <rect x="4" y="80" width="44" height="14" rx="1" fill="#161614"/>
+      <rect x="4" y="98" width="44" height="14" rx="1" fill="#1a1a18"/>
+      <!-- 書本 小色塊 -->
+      <rect x="6" y="28" width="6" height="10" rx="1" fill="#2a1a10"/>
+      <rect x="14" y="28" width="5" height="10" rx="1" fill="#0a1a2a"/>
+      <rect x="21" y="28" width="7" height="10" rx="1" fill="#1a2a10"/>
+      <rect x="30" y="28" width="5" height="10" rx="1" fill="#2a2a0a"/>
+      <rect x="6" y="46" width="8" height="10" rx="1" fill="#0a2a1a"/>
+      <rect x="16" y="46" width="6" height="10" rx="1" fill="#2a1a18"/>
+      <rect x="24" y="46" width="7" height="10" rx="1" fill="#1a1a2a"/>
+      <!-- 右側陳設：小植栽/燈 -->
+      <rect x="288" y="60" width="52" height="78" rx="2" fill="#121210" stroke="#1e1e1c" stroke-width="1"/>
+      <!-- 植栽 -->
+      <ellipse cx="314" cy="68" rx="16" ry="10" fill="#0a1a08"/>
+      <path d="M306,68 Q310,52 314,48 Q318,52 322,68" fill="#0e240a"/>
+      <path d="M308,65 Q305,54 308,50 Q312,56 310,65" fill="#0a1e08"/>
+      <rect x="310" y="70" width="8" height="14" rx="2" fill="#1a120a"/>
+      <!-- 燈光暈 上方打光 -->
+      <radialGradient id="kl02" cx="50%" cy="0%" r="60%">
+        <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.04"/>
+        <stop offset="100%" style="stop-color:#000000;stop-opacity:0"/>
+      </radialGradient>
+      <rect width="340" height="200" fill="url(#kl02)"/>
+      
+      <!-- 人 CU 特寫 -->
+      <circle cx="170" cy="68" r="32" fill="#2a2820"/>
+      <rect x="126" y="100" width="88" height="100" rx="4" fill="#2a2820"/>
+      <ellipse cx="122" cy="104" rx="16" ry="10" fill="#2a2820"/>
+      <ellipse cx="218" cy="104" rx="16" ry="10" fill="#2a2820"/>
+      <rect x="158" y="98" width="24" height="12" rx="3" fill="#2a2820"/>
+      <!-- Zoom 框 -->
+      <rect x="60" y="10" width="220" height="180" rx="4" fill="none" stroke="#c8f135" stroke-width="1" stroke-dasharray="3,3" opacity="0.4"/>
+    </svg></div>
+    <div class="scene-info">
+      <div class="scene-top"><span class="scene-num">#02</span><div class="scene-badges"><span class="badge type-口播">口播景</span><span class="badge time">2"</span></div></div>
+      <div class="camera-code">CU · Zoom in (Crop)</div>
+      <div class="scene-vo">「但這就是你瘦不下來的原因！」</div>
+      <div class="scene-post">highlight → 瘦不下來 · 重點色</div>
+    </div>
+  </div>
+
+  <!-- 03 吃完放碗摸肚子嘆氣 -->
+  <div class="scene-card">
+    <div class="segment-strip seg-pain"></div>
+    <div class="scene-visual"><svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">
+      <rect width="340" height="200" fill="#0f0f0f"/>
+      <!-- 桌面 -->
+      <rect x="0" y="130" width="340" height="70" rx="0" fill="#1a1610"/>
+      <!-- 碗放到桌上 -->
+      <ellipse cx="200" cy="134" rx="36" ry="14" fill="#2a2a1e" stroke="#3a3a28" stroke-width="1"/>
+      <ellipse cx="200" cy="130" rx="30" ry="10" fill="#1e1e16"/>
+      <!-- 人物 坐著側拍感 -->
+      <circle cx="145" cy="62" r="22" fill="#2a2a2a"/>
+      <!-- 身體 -->
+      <rect x="124" y="88" width="42" height="42" rx="3" fill="#2a2a2a"/>
+      <!-- 手放到肚子 -->
+      <path d="M124,108 Q108,118 106,130" stroke="#2a2a2a" stroke-width="12" stroke-linecap="round" fill="none"/>
+      <ellipse cx="104" cy="134" rx="12" ry="8" fill="#2a2a2a"/>
+      <!-- 嘆氣波紋 -->
+      <path d="M168,58 Q178,52 188,58" fill="none" stroke="#888" stroke-width="1.2" opacity="0.6"/>
+      <path d="M172,48 Q186,40 200,48" fill="none" stroke="#666" stroke-width="1" opacity="0.4"/>
+      <path d="M176,38 Q194,28 212,38" fill="none" stroke="#444" stroke-width="0.8" opacity="0.3"/>
+      <!-- 空碗暗示 -->
+      <text x="200" y="128" fill="#444" font-size="7" text-anchor="middle">空碗</text>
+    </svg></div>
+    <div class="scene-info">
+      <div class="scene-top"><span class="scene-num">#03</span><div class="scene-badges"><span class="badge type-Broll">B-roll</span><span class="badge time">3"</span></div></div>
+      <div class="camera-code">MS · 老師吃完 → 碗放桌 → 手摸肚子嘆氣</div>
+      <div class="scene-vo">「少吃，身體覺得遇到饑荒了；」</div>
+      <div class="scene-post">highlight → 饑荒 · 重點色<br>連續動作：放碗 → 摸肚 → 嘆氣表情</div>
+    </div>
+  </div>
+
+  <!-- 04 老師真實跑步畫面 -->
+  <div class="scene-card">
+    <div class="segment-strip seg-pain"></div>
+    <div class="scene-visual"><svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">
+      <!-- 公園背景 有樹 天空 -->
+      <rect width="340" height="200" fill="#0a0f0a"/>
+      <!-- 天空漸層 -->
+      <defs>
+        <linearGradient id="sky04" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" style="stop-color:#0a1018"/>
+          <stop offset="100%" style="stop-color:#141a10"/>
+        </linearGradient>
+      </defs>
+      <rect width="340" height="130" fill="url(#sky04)"/>
+      <!-- 地面 -->
+      <rect x="0" y="155" width="340" height="45" fill="#0e120a"/>
+      <!-- 跑道線 透視 -->
+      <path d="M0,165 L170,158 L340,165" stroke="#1a1e14" stroke-width="1"/>
+      <!-- 遠景樹 左 -->
+      <rect x="20" y="60" width="12" height="90" rx="3" fill="#0a140a"/>
+      <ellipse cx="26" cy="52" rx="22" ry="28" fill="#0c180a"/>
+      <ellipse cx="20" cy="60" rx="16" ry="20" fill="#0a140a"/>
+      <!-- 遠景樹 右 -->
+      <rect x="290" y="55" width="14" height="95" rx="3" fill="#0a140a"/>
+      <ellipse cx="297" cy="46" rx="24" ry="30" fill="#0c1a0a"/>
+      <ellipse cx="305" cy="58" rx="16" ry="22" fill="#0a140a"/>
+      <!-- 中景樹 遠方小樹 -->
+      <rect x="100" y="90" width="6" height="65" rx="2" fill="#0c160a"/>
+      <ellipse cx="103" cy="84" rx="12" ry="16" fill="#0e1a0a"/>
+      <rect x="220" y="94" width="6" height="60" rx="2" fill="#0c160a"/>
+      <ellipse cx="223" cy="88" rx="10" ry="14" fill="#0e1a0a"/>
+      <!-- 老師側面跑步 約置中偏左 -->
+      <!-- 頭 側面 -->
+      <circle cx="148" cy="52" r="20" fill="#2a2420"/>
+      <!-- 身體 -->
+      <rect x="132" y="74" width="34" height="36" rx="4" fill="#222018"/>
+      <!-- 右腿前跨 -->
+      <path d="M156,110 Q168,130 160,158" stroke="#222018" stroke-width="16" stroke-linecap="round" fill="none"/>
+      <!-- 左腿後蹬 往右後方 -->
+      <path d="M138,110 Q124,128 130,155" stroke="#1e1c16" stroke-width="16" stroke-linecap="round" fill="none"/>
+      <!-- 右臂後擺 -->
+      <path d="M166,82 Q186,96 184,114" stroke="#222018" stroke-width="13" stroke-linecap="round" fill="none"/>
+      <!-- 左臂前擺 -->
+      <path d="M132,82 Q114,90 116,110" stroke="#222018" stroke-width="13" stroke-linecap="round" fill="none"/>
+      <!-- 動感殘影 向左 -->
+      <line x1="40" y1="72" x2="80" y2="68" stroke="#1a2a1a" stroke-width="1.5" opacity="0.5"/>
+      <line x1="35" y1="90" x2="78" y2="86" stroke="#1a2a1a" stroke-width="1.5" opacity="0.4"/>
+      <line x1="40" y1="108" x2="78" y2="104" stroke="#1a2a1a" stroke-width="1.5" opacity="0.5"/>
+    </svg></div>
+    <div class="scene-info">
+      <div class="scene-top"><span class="scene-num">#04</span><div class="scene-badges"><span class="badge type-Broll">B-roll 運動</span><span class="badge time">3"</span></div></div>
+      <div class="camera-code">老師跑步實拍素材 · 側面或正面均可</div>
+      <div class="scene-vo">「多動，覺得有猛獸在追它」</div>
+      <div class="scene-post">highlight → 猛獸 · 重點色<br>使用老師現有運動素材</div>
+    </div>
+  </div>
+
+  <!-- 05 剖面圖 脂肪層發亮鎖住 -->
+  <div class="scene-card">
+    <div class="segment-strip seg-pain"></div>
+    <div class="scene-visual"><svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">
+      <rect width="340" height="200" fill="#0d0d0d"/>
+      <!-- 剖面圖外框 -->
+      <rect x="55" y="22" width="230" height="138" rx="8" fill="#141414" stroke="#2a2a2a"/>
+      <!-- 皮膚外輪廓 -->
+      <path d="M75,42 Q170,32 265,42 L265,145 Q170,155 75,145 Z" fill="#1e1812" stroke="#2a2010" stroke-width="1"/>
+      <!-- 皮下脂肪層 ★ 發亮鎖住 -->
+      <path d="M75,52 Q170,44 265,52 L265,82 Q170,74 75,82 Z" fill="#3d1a0a"/>
+      <!-- 發光效果 -->
+      <path d="M75,52 Q170,44 265,52 L265,82 Q170,74 75,82 Z" fill="none" stroke="#ff6622" stroke-width="2"/>
+      <path d="M80,54 Q170,47 260,54 L260,80 Q170,73 80,80 Z" fill="none" stroke="#ff8844" stroke-width="1" opacity="0.6"/>
+      <!-- 鎖頭icon -->
+      <rect x="156" y="59" width="18" height="14" rx="2" fill="#ff4444" opacity="0.9"/>
+      <path d="M159,59 Q159,52 165,52 Q171,52 171,59" fill="none" stroke="#ff4444" stroke-width="2"/>
+      <circle cx="165" cy="66" r="2" fill="#fff" opacity="0.8"/>
+      <text x="192" y="70" fill="#ff6622" font-size="8" font-family="monospace">皮下脂肪 🔒</text>
+      <!-- 內臟脂肪層 -->
+      <path d="M78,84 Q170,78 262,84 L262,106 Q170,100 78,106 Z" fill="#2a1a0a" stroke="#ff8c42" stroke-width="0.8"/>
+      <text x="170" y="98" fill="#ff8c42" font-size="8" font-family="monospace" text-anchor="middle">內臟脂肪</text>
+      <!-- 肌肉層 -->
+      <path d="M80,108 Q170,103 260,108 L260,124 Q170,119 80,124 Z" fill="#0a2218" stroke="#4da6ff" stroke-width="0.8"/>
+      <text x="170" y="119" fill="#4da6ff" font-size="8" font-family="monospace" text-anchor="middle">肌肉</text>
+      <!-- 骨骼層 -->
+      <path d="M82,126 Q170,122 258,126 L258,140 Q170,136 82,140 Z" fill="#1a1a1a" stroke="#666" stroke-width="0.8"/>
+      <text x="170" y="136" fill="#666" font-size="8" font-family="monospace" text-anchor="middle">骨骼</text>
+      <!-- 代謝箭頭 右側 -->
+      <text x="304" y="46" fill="#888" font-size="8" text-anchor="middle" font-family="monospace">代謝</text>
+      <line x1="304" y1="50" x2="304" y2="136" stroke="#ff4444" stroke-width="2"/>
+      <polygon points="298,132 310,132 304,142" fill="#ff4444"/>
+      <!-- 層標籤 左側 -->
+      <text x="52" y="70" fill="#ff6622" font-size="7" text-anchor="end" font-family="monospace">脂肪</text>
+      <text x="52" y="97" fill="#ff8c42" font-size="7" text-anchor="end" font-family="monospace">內臟</text>
+      <text x="52" y="118" fill="#4da6ff" font-size="7" text-anchor="end" font-family="monospace">肌肉</text>
+    </svg></div>
+    <div class="scene-info">
+      <div class="scene-top"><span class="scene-num">#05</span><div class="scene-badges"><span class="badge type-簡報">簡報動畫</span><span class="badge time">4"</span></div></div>
+      <div class="camera-code">腹部剖面圖 · 脂肪層發光鎖住 + 代謝箭頭向下</div>
+      <div class="scene-vo">「身體直接開啟防禦模式，把代謝降到最低」</div>
+      <div class="scene-post">皮下脂肪層橘紅色發亮 → 鎖頭出現鎖住<br>代謝箭頭同步向下<br>highlight → 防禦模式、代謝降到最低 · 重點色</div>
+    </div>
+  </div>
+
+  <!-- 06 -->
+  <div class="scene-card">
+    <div class="segment-strip seg-pain"></div>
+    <div class="scene-visual"><svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">
+      
+      <!-- 空間背景 深度感 -->
+      <!-- 後牆 -->
+      <rect width="340" height="200" fill="#0e0e0e"/>
+      <!-- 地板透視 -->
+      <path d="M0,200 L0,145 L170,120 L340,145 L340,200 Z" fill="#131310"/>
+      <!-- 左牆透視 -->
+      <path d="M0,0 L0,145 L170,120 L170,0 Z" fill="#111111"/>
+      <!-- 右牆透視 -->
+      <path d="M340,0 L340,145 L170,120 L170,0 Z" fill="#0f0f0f"/>
+      <!-- 後牆水平線 -->
+      <line x1="0" y1="120" x2="340" y2="120" stroke="#1e1e1e" stroke-width="1"/>
+      <!-- 左側陳設：書櫃/架子 -->
+      <rect x="0" y="20" width="52" height="118" rx="2" fill="#141412" stroke="#1e1e1a" stroke-width="1"/>
+      <rect x="4" y="26" width="44" height="14" rx="1" fill="#1a1a18"/>
+      <rect x="4" y="44" width="44" height="14" rx="1" fill="#181816"/>
+      <rect x="4" y="62" width="44" height="14" rx="1" fill="#1a1a18"/>
+      <rect x="4" y="80" width="44" height="14" rx="1" fill="#161614"/>
+      <rect x="4" y="98" width="44" height="14" rx="1" fill="#1a1a18"/>
+      <!-- 書本 小色塊 -->
+      <rect x="6" y="28" width="6" height="10" rx="1" fill="#2a1a10"/>
+      <rect x="14" y="28" width="5" height="10" rx="1" fill="#0a1a2a"/>
+      <rect x="21" y="28" width="7" height="10" rx="1" fill="#1a2a10"/>
+      <rect x="30" y="28" width="5" height="10" rx="1" fill="#2a2a0a"/>
+      <rect x="6" y="46" width="8" height="10" rx="1" fill="#0a2a1a"/>
+      <rect x="16" y="46" width="6" height="10" rx="1" fill="#2a1a18"/>
+      <rect x="24" y="46" width="7" height="10" rx="1" fill="#1a1a2a"/>
+      <!-- 右側陳設：小植栽/燈 -->
+      <rect x="288" y="60" width="52" height="78" rx="2" fill="#121210" stroke="#1e1e1c" stroke-width="1"/>
+      <!-- 植栽 -->
+      <ellipse cx="314" cy="68" rx="16" ry="10" fill="#0a1a08"/>
+      <path d="M306,68 Q310,52 314,48 Q318,52 322,68" fill="#0e240a"/>
+      <path d="M308,65 Q305,54 308,50 Q312,56 310,65" fill="#0a1e08"/>
+      <rect x="310" y="70" width="8" height="14" rx="2" fill="#1a120a"/>
+      <!-- 燈光暈 上方打光 -->
+      <radialGradient id="kl06" cx="50%" cy="0%" r="60%">
+        <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.04"/>
+        <stop offset="100%" style="stop-color:#000000;stop-opacity:0"/>
+      </radialGradient>
+      <rect width="340" height="200" fill="url(#kl06)"/>
+      
+      <!-- 椅子 低矮椅背 + 椅腳 (MCU 只露部分) -->
+      <rect x="140" y="128" width="60" height="12" rx="3" fill="#1a1814" opacity="0.7"/>
+      <rect x="146" y="100" width="48" height="30" rx="3" fill="#161412" opacity="0.7"/>
+      <line x1="146" y1="140" x2="142" y2="195" stroke="#111" stroke-width="5" stroke-linecap="round"/>
+      <line x1="194" y1="140" x2="198" y2="195" stroke="#111" stroke-width="5" stroke-linecap="round"/>
+      <!-- 人 坐姿 MCU -->
+      <circle cx="170" cy="58" r="26" fill="#2a2820"/>
+      <rect x="140" y="86" width="60" height="60" rx="4" fill="#2a2820"/>
+      <ellipse cx="136" cy="92" rx="14" ry="9" fill="#2a2820"/>
+      <ellipse cx="204" cy="92" rx="14" ry="9" fill="#2a2820"/>
+      <rect x="160" y="82" width="20" height="12" rx="3" fill="#2a2820"/>
+    </svg></div>
+    <div class="scene-info">
+      <div class="scene-top"><span class="scene-num">#06</span><div class="scene-badges"><span class="badge type-口播">口播景</span><span class="badge time">3"</span></div></div>
+      <div class="camera-code">MCU · Static</div>
+      <div class="scene-vo">「拼命留住脂肪，體重就卡住了——這就是停滯期真正的成因」</div>
+      <div class="scene-post">highlight → 停滯期 · 重點色</div>
+    </div>
+  </div>
+
+
+  <!-- 01 -->
+  <div class="scene-card">
+    <div class="segment-strip seg-pain"></div>
+    <div class="scene-visual"><svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="kl07" cx="50%" cy="0%" r="60%">
+          <stop offset="0%" style="stop-color:#fff;stop-opacity:0.04"/>
+          <stop offset="100%" style="stop-color:#000;stop-opacity:0"/>
+        </radialGradient>
+      </defs>
+      <!-- 空間背景 深度感 -->
+      <rect width="340" height="200" fill="#0e0e0e"/>
+      <path d="M0,200 L0,145 L170,120 L340,145 L340,200 Z" fill="#131310"/>
+      <path d="M0,0 L0,145 L170,120 L170,0 Z" fill="#111111"/>
+      <path d="M340,0 L340,145 L170,120 L170,0 Z" fill="#0f0f0f"/>
+      <line x1="0" y1="120" x2="340" y2="120" stroke="#1e1e1e" stroke-width="1"/>
+      <rect x="0" y="20" width="52" height="118" rx="2" fill="#141412" stroke="#1e1e1a" stroke-width="1"/>
+      <rect x="4" y="26" width="44" height="14" rx="1" fill="#1a1a18"/>
+      <rect x="4" y="44" width="44" height="14" rx="1" fill="#181816"/>
+      <rect x="4" y="62" width="44" height="14" rx="1" fill="#1a1a18"/>
+      <rect x="4" y="80" width="44" height="14" rx="1" fill="#161614"/>
+      <rect x="4" y="98" width="44" height="14" rx="1" fill="#1a1a18"/>
+      <rect x="6" y="28" width="6" height="10" rx="1" fill="#2a1a10"/>
+      <rect x="14" y="28" width="5" height="10" rx="1" fill="#0a1a2a"/>
+      <rect x="21" y="28" width="7" height="10" rx="1" fill="#1a2a10"/>
+      <rect x="30" y="28" width="5" height="10" rx="1" fill="#2a2a0a"/>
+      <rect x="6" y="46" width="8" height="10" rx="1" fill="#0a2a1a"/>
+      <rect x="16" y="46" width="6" height="10" rx="1" fill="#2a1a18"/>
+      <rect x="24" y="46" width="7" height="10" rx="1" fill="#1a1a2a"/>
+      <rect x="288" y="60" width="52" height="78" rx="2" fill="#121210" stroke="#1e1e1c" stroke-width="1"/>
+      <ellipse cx="314" cy="68" rx="16" ry="10" fill="#0a1a08"/>
+      <path d="M306,68 Q310,52 314,48 Q318,52 322,68" fill="#0e240a"/>
+      <path d="M308,65 Q305,54 308,50 Q312,56 310,65" fill="#0a1e08"/>
+      <rect x="310" y="70" width="8" height="14" rx="2" fill="#1a120a"/>
+      <rect width="340" height="200" fill="url(#kl07)"/>
+      <!-- 椅子 低矮椅背 + 椅腳 -->
+      <rect x="140" y="130" width="60" height="12" rx="3" fill="#1a1814" stroke="#1e1c16"/>
+      <rect x="146" y="100" width="48" height="34" rx="3" fill="#161412" stroke="#1e1c16"/>
+      <line x1="146" y1="142" x2="142" y2="190" stroke="#111" stroke-width="5" stroke-linecap="round"/>
+      <line x1="194" y1="142" x2="198" y2="190" stroke="#111" stroke-width="5" stroke-linecap="round"/>
+      <line x1="154" y1="142" x2="150" y2="190" stroke="#141210" stroke-width="4" stroke-linecap="round"/>
+      <line x1="186" y1="142" x2="190" y2="190" stroke="#141210" stroke-width="4" stroke-linecap="round"/>
+      <!-- 人物 MS 但放大 佔滿更多畫面 zoom in 感 -->
+      <circle cx="170" cy="54" r="30" fill="#2a2820"/>
+      <rect x="140" y="82" width="60" height="58" rx="4" fill="#2a2820"/>
+      <ellipse cx="128" cy="90" rx="16" ry="10" fill="#2a2820"/>
+      <ellipse cx="212" cy="90" rx="16" ry="10" fill="#2a2820"/>
+      <rect x="160" y="78" width="20" height="12" rx="3" fill="#2a2820"/>
+      <!-- Zoom crop 框 更緊 表示正在推進 -->
+      <rect x="62" y="18" width="216" height="166" rx="4" fill="none" stroke="#c8f135" stroke-width="1.2" stroke-dasharray="4,3" opacity="0.5"/>
+      <!-- 四角強調 -->
+      <line x1="62" y1="18" x2="88" y2="18" stroke="#c8f135" stroke-width="2" opacity="0.7"/>
+      <line x1="62" y1="18" x2="62" y2="44" stroke="#c8f135" stroke-width="2" opacity="0.7"/>
+      <line x1="278" y1="18" x2="252" y2="18" stroke="#c8f135" stroke-width="2" opacity="0.7"/>
+      <line x1="278" y1="18" x2="278" y2="44" stroke="#c8f135" stroke-width="2" opacity="0.7"/>
+      <line x1="62" y1="184" x2="88" y2="184" stroke="#c8f135" stroke-width="2" opacity="0.7"/>
+      <line x1="62" y1="184" x2="62" y2="158" stroke="#c8f135" stroke-width="2" opacity="0.7"/>
+      <line x1="278" y1="184" x2="252" y2="184" stroke="#c8f135" stroke-width="2" opacity="0.7"/>
+      <line x1="278" y1="184" x2="278" y2="158" stroke="#c8f135" stroke-width="2" opacity="0.7"/>
+    </svg></div>
+    <div class="scene-info">
+      <div class="scene-top"><span class="scene-num">#07</span><div class="scene-badges"><span class="badge type-口播">口播景</span><span class="badge time">2"</span></div></div>
+      <div class="camera-code">MS · Zoom in 停頓</div>
+      <div class="scene-vo">「想突破停滯期，方法只有一個——」</div>
+      <div class="scene-post">highlight → 方法只有一個 · 重點色</div>
+    </div>
+  </div>
+
+  <!-- 08 口播 -->
+  <div class="scene-card">
+    <div class="segment-strip seg-turn"></div>
+    <div class="scene-visual"><svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">
+      
+      <!-- 空間背景 深度感 -->
+      <!-- 後牆 -->
+      <rect width="340" height="200" fill="#0e0e0e"/>
+      <!-- 地板透視 -->
+      <path d="M0,200 L0,145 L170,120 L340,145 L340,200 Z" fill="#131310"/>
+      <!-- 左牆透視 -->
+      <path d="M0,0 L0,145 L170,120 L170,0 Z" fill="#111111"/>
+      <!-- 右牆透視 -->
+      <path d="M340,0 L340,145 L170,120 L170,0 Z" fill="#0f0f0f"/>
+      <!-- 後牆水平線 -->
+      <line x1="0" y1="120" x2="340" y2="120" stroke="#1e1e1e" stroke-width="1"/>
+      <!-- 左側陳設：書櫃/架子 -->
+      <rect x="0" y="20" width="52" height="118" rx="2" fill="#141412" stroke="#1e1e1a" stroke-width="1"/>
+      <rect x="4" y="26" width="44" height="14" rx="1" fill="#1a1a18"/>
+      <rect x="4" y="44" width="44" height="14" rx="1" fill="#181816"/>
+      <rect x="4" y="62" width="44" height="14" rx="1" fill="#1a1a18"/>
+      <rect x="4" y="80" width="44" height="14" rx="1" fill="#161614"/>
+      <rect x="4" y="98" width="44" height="14" rx="1" fill="#1a1a18"/>
+      <!-- 書本 小色塊 -->
+      <rect x="6" y="28" width="6" height="10" rx="1" fill="#2a1a10"/>
+      <rect x="14" y="28" width="5" height="10" rx="1" fill="#0a1a2a"/>
+      <rect x="21" y="28" width="7" height="10" rx="1" fill="#1a2a10"/>
+      <rect x="30" y="28" width="5" height="10" rx="1" fill="#2a2a0a"/>
+      <rect x="6" y="46" width="8" height="10" rx="1" fill="#0a2a1a"/>
+      <rect x="16" y="46" width="6" height="10" rx="1" fill="#2a1a18"/>
+      <rect x="24" y="46" width="7" height="10" rx="1" fill="#1a1a2a"/>
+      <!-- 右側陳設：小植栽/燈 -->
+      <rect x="288" y="60" width="52" height="78" rx="2" fill="#121210" stroke="#1e1e1c" stroke-width="1"/>
+      <!-- 植栽 -->
+      <ellipse cx="314" cy="68" rx="16" ry="10" fill="#0a1a08"/>
+      <path d="M306,68 Q310,52 314,48 Q318,52 322,68" fill="#0e240a"/>
+      <path d="M308,65 Q305,54 308,50 Q312,56 310,65" fill="#0a1e08"/>
+      <rect x="310" y="70" width="8" height="14" rx="2" fill="#1a120a"/>
+      <!-- 燈光暈 上方打光 -->
+      <radialGradient id="kl08" cx="50%" cy="0%" r="60%">
+        <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.04"/>
+        <stop offset="100%" style="stop-color:#000000;stop-opacity:0"/>
+      </radialGradient>
+      <rect width="340" height="200" fill="url(#kl08)"/>
+      
+      <!-- 椅子 低矮椅背 + 椅腳 (MCU 只露部分) -->
+      <rect x="140" y="128" width="60" height="12" rx="3" fill="#1a1814" opacity="0.7"/>
+      <rect x="146" y="100" width="48" height="30" rx="3" fill="#161412" opacity="0.7"/>
+      <line x1="146" y1="140" x2="142" y2="195" stroke="#111" stroke-width="5" stroke-linecap="round"/>
+      <line x1="194" y1="140" x2="198" y2="195" stroke="#111" stroke-width="5" stroke-linecap="round"/>
+      <!-- 人 坐姿 MCU -->
+      <circle cx="170" cy="58" r="26" fill="#2a2820"/>
+      <rect x="140" y="86" width="60" height="60" rx="4" fill="#2a2820"/>
+      <ellipse cx="136" cy="92" rx="14" ry="9" fill="#2a2820"/>
+      <ellipse cx="204" cy="92" rx="14" ry="9" fill="#2a2820"/>
+      <rect x="160" y="82" width="20" height="12" rx="3" fill="#2a2820"/>
+    </svg></div>
+    <div class="scene-info">
+      <div class="scene-top"><span class="scene-num">#08</span><div class="scene-badges"><span class="badge type-口播">口播景</span><span class="badge time">2"</span></div></div>
+      <div class="camera-code">MCU · Static · 直視有力</div>
+      <div class="scene-vo">「不讓身體發現你在減重」</div>
+      <div class="scene-post">highlight → 不讓身體發現 · 重點色<br>乾淨定鏡，語氣破題</div>
+    </div>
+  </div>
+
+  <!-- 08.5 主視覺間歇 (移到這裡) -->
+  <div class="scene-card">
+    <div class="segment-strip seg-identity"></div>
+    <div class="scene-visual"><svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">
+      <rect width="340" height="200" fill="#0a0a0a"/>
+      <defs><linearGradient id="mvG" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#0e0e0e"/><stop offset="100%" style="stop-color:#1a1a0a"/></linearGradient></defs>
+      <rect width="340" height="200" fill="url(#mvG)"/>
+      <text x="170" y="84" fill="#c8f135" font-size="24" font-family="'Bebas Neue', sans-serif" text-anchor="middle" letter-spacing="4">蕭捷健</text>
+      <text x="170" y="110" fill="#f0f0f0" font-size="13" font-family="'Noto Sans TC', sans-serif" text-anchor="middle" letter-spacing="2">碳水循環減重法</text>
+      <line x1="80" y1="122" x2="260" y2="122" stroke="#c8f135" stroke-width="0.5" opacity="0.4"/>
+      <text x="170" y="138" fill="#555" font-size="9" font-family="monospace" text-anchor="middle" letter-spacing="2">SHIFU MASTER COURSE</text>
+      <rect x="10" y="174" width="72" height="16" rx="2" fill="#1a1a0a" stroke="#c8f135" stroke-width="0.5"/>
+      <text x="46" y="185" fill="#c8f135" font-size="8" text-anchor="middle" font-family="monospace">無口白</text>
+    </svg></div>
+    <div class="scene-info">
+      <div class="scene-top"><span class="scene-num">#09</span><div class="scene-badges"><span class="badge type-主視覺">主視覺</span><span class="badge time">2"</span></div></div>
+      <div class="camera-code">課程主視覺滿版 · 標準字居中</div>
+      <div class="scene-vo">（無口白）— 每支 Trailer 固定插入</div>
+      <div class="scene-post">破題後的呼吸點 · 乾淨定格 · 音樂不停</div>
+    </div>
+  </div>
+
+  <!-- 09 對比圖 (重新編號為10) -->
+  <div class="scene-card">
+    <div class="segment-strip seg-turn"></div>
+    <div class="scene-visual"><svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">
+      <rect width="340" height="200" fill="#0d0d0d"/>
+      <rect x="14" y="16" width="144" height="168" rx="5" fill="#1a1010" stroke="#ff4444" stroke-width="1"/>
+      <text x="86" y="36" fill="#ff4444" font-size="11" font-family="monospace" text-anchor="middle">❌ 傳統</text>
+      <rect x="28" y="44" width="116" height="22" rx="3" fill="#2a1a1a"/>
+      <text x="86" y="59" fill="#cc8888" font-size="9" text-anchor="middle">每天少吃</text>
+      <rect x="28" y="72" width="116" height="22" rx="3" fill="#2a1a1a"/>
+      <text x="86" y="87" fill="#cc8888" font-size="9" text-anchor="middle">每天多動</text>
+      <line x1="86" y1="98" x2="86" y2="120" stroke="#ff4444" stroke-width="1.5"/>
+      <polygon points="80,116 92,116 86,124" fill="#ff4444"/>
+      <rect x="28" y="128" width="116" height="30" rx="3" fill="#3a1010" stroke="#ff4444" stroke-width="0.5"/>
+      <text x="86" y="141" fill="#ff6644" font-size="8" text-anchor="middle" font-family="monospace">代謝越來越低</text>
+      <text x="86" y="153" fill="#ff4444" font-size="8" text-anchor="middle" font-family="monospace">體重卡住</text>
+      <line x1="24" y1="26" x2="148" y2="174" stroke="#ff4444" stroke-width="1.5" opacity="0.2"/>
+      <line x1="148" y1="26" x2="24" y2="174" stroke="#ff4444" stroke-width="1.5" opacity="0.2"/>
+      <rect x="182" y="16" width="144" height="168" rx="5" fill="#0a1a0a" stroke="#c8f135" stroke-width="1"/>
+      <text x="254" y="36" fill="#c8f135" font-size="11" font-family="monospace" text-anchor="middle">✅ 碳水循環</text>
+      <rect x="196" y="44" width="116" height="22" rx="3" fill="#1a2a0a"/>
+      <text x="254" y="59" fill="#c8f135" font-size="9" text-anchor="middle">高碳日 大碗 + 運動</text>
+      <rect x="196" y="72" width="116" height="22" rx="3" fill="#0a1a1a"/>
+      <text x="254" y="87" fill="#4da6ff" font-size="9" text-anchor="middle">低碳日 小碗 + 輕運動</text>
+      <line x1="254" y1="98" x2="254" y2="120" stroke="#c8f135" stroke-width="1.5"/>
+      <line x1="244" y1="110" x2="254" y2="122" stroke="#c8f135" stroke-width="1.5"/>
+      <line x1="264" y1="110" x2="254" y2="122" stroke="#c8f135" stroke-width="1.5"/>
+      <rect x="196" y="128" width="116" height="30" rx="3" fill="#0a2a0a" stroke="#c8f135" stroke-width="0.5"/>
+      <text x="254" y="141" fill="#88cc88" font-size="8" text-anchor="middle" font-family="monospace">代謝維持正常</text>
+      <text x="254" y="153" fill="#c8f135" font-size="8" text-anchor="middle" font-family="monospace">體重持續下降</text>
+      <text x="16" y="12" fill="#555" font-size="10" font-family="monospace">簡報動畫 · 對比圖</text>
+    </svg></div>
+    <div class="scene-info">
+      <div class="scene-top"><span class="scene-num">#10</span><div class="scene-badges"><span class="badge type-簡報">簡報動畫</span><span class="badge time">4"</span></div></div>
+      <div class="camera-code">對比圖 · 左欄打叉 → 右欄滑入打勾</div>
+      <div class="scene-vo">「少動那天少吃碳水，多動那天多吃碳水」</div>
+      <div class="scene-post">左欄整欄出現打叉 → 右欄滑入打勾<br>highlight → 少吃碳水 / 多吃碳水 · 重點色</div>
+    </div>
+  </div>
+
+  <!-- 10 週計劃圓環圖 -->
+  <div class="scene-card">
+    <div class="segment-strip seg-solution"></div>
+    <div class="scene-visual"><svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">
+      <rect width="340" height="200" fill="#0d0d0d"/>
+      <!-- 圓環縮小置左，右側放圖例 -->
+      <!-- 圓環背景 -->
+      <circle cx="120" cy="104" r="64" fill="none" stroke="#222" stroke-width="20"/>
+      <!-- 高碳 一/四/六 -->
+      <circle cx="120" cy="104" r="64" fill="none" stroke="#c8f135" stroke-width="20" stroke-dasharray="57 345" stroke-dashoffset="0" opacity="0.9"/>
+      <circle cx="120" cy="104" r="64" fill="none" stroke="#c8f135" stroke-width="20" stroke-dasharray="57 345" stroke-dashoffset="-172" opacity="0.9"/>
+      <circle cx="120" cy="104" r="64" fill="none" stroke="#c8f135" stroke-width="20" stroke-dasharray="57 345" stroke-dashoffset="-287" opacity="0.9"/>
+      <!-- 中碳 二/五 -->
+      <circle cx="120" cy="104" r="64" fill="none" stroke="#ff8c42" stroke-width="20" stroke-dasharray="57 345" stroke-dashoffset="-57" opacity="0.8"/>
+      <circle cx="120" cy="104" r="64" fill="none" stroke="#ff8c42" stroke-width="20" stroke-dasharray="57 345" stroke-dashoffset="-229" opacity="0.8"/>
+      <!-- 低碳 三/日 -->
+      <circle cx="120" cy="104" r="64" fill="none" stroke="#4da6ff" stroke-width="20" stroke-dasharray="57 345" stroke-dashoffset="-114" opacity="0.75"/>
+      <circle cx="120" cy="104" r="64" fill="none" stroke="#4da6ff" stroke-width="20" stroke-dasharray="32 370" stroke-dashoffset="-344" opacity="0.75"/>
+      <!-- 中心 -->
+      <circle cx="120" cy="104" r="40" fill="#0d0d0d"/>
+      <text x="120" y="99" fill="#c8f135" font-size="14" font-family="'Bebas Neue', sans-serif" text-anchor="middle" letter-spacing="2">碳水</text>
+      <text x="120" y="115" fill="#888" font-size="8" font-family="monospace" text-anchor="middle">循環法</text>
+      <!-- 圓弧無文字，說明在右側圖例 -->
+      <!-- 右側圖例區 寬裕排版 -->
+      <text x="218" y="48" fill="#666" font-size="8" font-family="monospace">高碳日</text>
+      <rect x="218" y="54" width="110" height="24" rx="4" fill="#1a2a0a" stroke="#c8f135" stroke-width="0.5"/>
+      <text x="273" y="70" fill="#c8f135" font-size="9" font-family="monospace" text-anchor="middle">一 · 四 · 六</text>
+      <text x="218" y="96" fill="#666" font-size="8" font-family="monospace">中碳日</text>
+      <rect x="218" y="102" width="110" height="24" rx="4" fill="#1a1a0a" stroke="#ff8c42" stroke-width="0.5"/>
+      <text x="273" y="118" fill="#ff8c42" font-size="9" font-family="monospace" text-anchor="middle">二 · 五</text>
+      <text x="218" y="144" fill="#666" font-size="8" font-family="monospace">低碳日</text>
+      <rect x="218" y="150" width="110" height="24" rx="4" fill="#0a141a" stroke="#4da6ff" stroke-width="0.5"/>
+      <text x="273" y="166" fill="#4da6ff" font-size="9" font-family="monospace" text-anchor="middle">三 · 日</text>
+    </svg></div>
+    <div class="scene-info">
+      <div class="scene-top"><span class="scene-num">#11</span><div class="scene-badges"><span class="badge type-簡報">簡報動畫</span><span class="badge time">4"</span></div></div>
+      <div class="camera-code">週計劃圓環圖 · 七格依序亮起</div>
+      <div class="scene-vo">「高、中、低碳日交替循環」</div>
+      <div class="scene-post">圓環七格隨口白節奏逐一亮起<br>高碳日 一/四/六 · 中碳日 二/五 · 低碳日 三/日<br>highlight → 高、中、低碳日 · 三色對應</div>
+    </div>
+  </div>
+
+  <!-- 11 兩格分割 高碳日 -->
+  <div class="scene-card">
+    <div class="segment-strip seg-solution"></div>
+    <div class="scene-visual"><svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">
+      <rect width="340" height="200" fill="#0d0d0d"/>
+      <!-- 左格：重訓畫面 -->
+      <rect x="8" y="8" width="156" height="182" rx="3" fill="#111" stroke="#2a2a2a"/>
+      <!-- 啞鈴架背景暗示 -->
+      <rect x="18" y="30" width="6" height="130" rx="2" fill="#1e1e1e"/>
+      <rect x="116" y="30" width="6" height="130" rx="2" fill="#1e1e1e"/>
+      <!-- 人物 舉重動作 — 深蹲/臥推姿勢 -->
+      <!-- 頭 -->
+      <circle cx="72" cy="52" r="16" fill="#2a2820"/>
+      <!-- 身體前傾 -->
+      <rect x="56" y="70" width="32" height="28" rx="3" fill="#2a2820"/>
+      <!-- 左臂上舉 -->
+      <path d="M56,76 Q38,64 30,52" stroke="#2a2820" stroke-width="14" stroke-linecap="round" fill="none"/>
+      <!-- 右臂上舉 -->
+      <path d="M88,76 Q106,64 114,52" stroke="#2a2820" stroke-width="14" stroke-linecap="round" fill="none"/>
+      <!-- 槓鈴橫桿 -->
+      <rect x="20" y="46" width="100" height="8" rx="4" fill="#383430"/>
+      <!-- 槓片 左 -->
+      <rect x="20" y="36" width="14" height="28" rx="3" fill="#2e2c28"/>
+      <rect x="34" y="38" width="8"  height="24" rx="2" fill="#282622"/>
+      <!-- 槓片 右 -->
+      <rect x="106" y="36" width="14" height="28" rx="3" fill="#2e2c28"/>
+      <rect x="98"  y="38" width="8"  height="24" rx="2" fill="#282622"/>
+      <!-- 腿部深蹲 -->
+      <path d="M62,98 Q50,122 46,155" stroke="#2a2820" stroke-width="16" stroke-linecap="round" fill="none"/>
+      <path d="M78,98 Q90,122 94,155" stroke="#2a2820" stroke-width="16" stroke-linecap="round" fill="none"/>
+      <!-- 高碳日標籤 -->
+      <rect x="14" y="168" width="64" height="16" rx="2" fill="#1a1a0a"/>
+      <text x="46" y="179" fill="#c8f135" font-size="8" text-anchor="middle" font-family="monospace">高碳日 🔥</text>
+      <text x="15" y="18" fill="#555" font-size="9" font-family="monospace">重訓</text>
+
+      <!-- 右格：高碳水食物俯拍 -->
+      <rect x="176" y="8" width="156" height="182" rx="3" fill="#141a10" stroke="#c8f135" stroke-width="1" opacity="0.6"/>
+      <ellipse cx="254" cy="90" rx="48" ry="36" fill="#1a2a10"/>
+      <ellipse cx="254" cy="87" rx="34" ry="24" fill="#2a3a15"/>
+      <ellipse cx="254" cy="84" rx="22" ry="14" fill="#3a3a25"/>
+      <text x="254" y="88" fill="#aaa" font-size="8" text-anchor="middle">白飯 / 地瓜</text>
+      <text x="254" y="182" fill="#c8f135" font-size="8" text-anchor="middle" font-family="monospace">多碳水</text>
+      <line x1="168" y1="8" x2="168" y2="190" stroke="#c8f135" stroke-width="1" opacity="0.3"/>
+    </svg></div>
+    <div class="scene-info">
+      <div class="scene-top"><span class="scene-num">#12</span><div class="scene-badges"><span class="badge type-分割">兩格分割</span><span class="badge time">3"</span></div></div>
+      <div class="camera-code">左：運動素材 / 右：高碳水食物俯拍</div>
+      <div class="scene-vo">「多動那天，就多補充碳水給身體能量」</div>
+      <div class="scene-post">兩格同時出現 · highlight → 多補充碳水 · 重點色</div>
+    </div>
+  </div>
+
+  <!-- 12 兩格分割 低碳日 -->
+  <div class="scene-card">
+    <div class="segment-strip seg-solution"></div>
+    <div class="scene-visual"><svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">
+      <rect width="340" height="200" fill="#0d0d0d"/>
+      <rect x="8" y="8" width="156" height="178" rx="3" fill="#141414" stroke="#2a2a2a"/>
+      <circle cx="86" cy="60" r="20" fill="#2a2a2a"/>
+      <rect x="68" y="84" width="36" height="30" rx="3" fill="#2a2a2a"/>
+      <path d="M68,114 Q74,148 72,172" stroke="#2a2a2a" stroke-width="13" stroke-linecap="round" fill="none"/>
+      <path d="M100,114 Q96,148 98,172" stroke="#2a2a2a" stroke-width="13" stroke-linecap="round" fill="none"/>
+      <text x="86" y="188" fill="#4da6ff" font-size="8" text-anchor="middle" font-family="monospace">少動</text>
+      <rect x="176" y="8" width="156" height="178" rx="3" fill="#0a141a" stroke="#4da6ff" stroke-width="1" opacity="0.6"/>
+      <ellipse cx="254" cy="90" rx="48" ry="34" fill="#0a1e14"/>
+      <ellipse cx="240" cy="84" rx="14" ry="9" fill="#1a3a1a"/>
+      <ellipse cx="260" cy="80" rx="12" ry="8" fill="#1e4020"/>
+      <ellipse cx="268" cy="94" rx="10" ry="7" fill="#1a3a18"/>
+      <ellipse cx="248" cy="98" rx="9" ry="6" fill="#163016"/>
+      <text x="254" y="118" fill="#4da6ff" font-size="8" text-anchor="middle">沙拉</text>
+      <text x="254" y="188" fill="#4da6ff" font-size="8" text-anchor="middle" font-family="monospace">少碳水 🌿</text>
+      <line x1="168" y1="8" x2="168" y2="186" stroke="#4da6ff" stroke-width="1" opacity="0.3"/>
+      <text x="16" y="16" fill="#555" font-size="10" font-family="monospace">兩格分割</text>
+    </svg></div>
+    <div class="scene-info">
+      <div class="scene-top"><span class="scene-num">#13</span><div class="scene-badges"><span class="badge type-分割">兩格分割</span><span class="badge time">3"</span></div></div>
+      <div class="camera-code">左：散步/拉伸素材 / 右：低碳食物俯拍</div>
+      <div class="scene-vo">「少動那天，碳水降下來，讓身體燃脂」</div>
+      <div class="scene-post">highlight → 碳水降下來、燃脂 · 重點色</div>
+    </div>
+  </div>
+
+  <!-- 13 -->
+  <div class="scene-card">
+    <div class="segment-strip seg-solution"></div>
+    <div class="scene-visual"><svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">
+      
+      <!-- 空間背景 深度感 -->
+      <!-- 後牆 -->
+      <rect width="340" height="200" fill="#0e0e0e"/>
+      <!-- 地板透視 -->
+      <path d="M0,200 L0,145 L170,120 L340,145 L340,200 Z" fill="#131310"/>
+      <!-- 左牆透視 -->
+      <path d="M0,0 L0,145 L170,120 L170,0 Z" fill="#111111"/>
+      <!-- 右牆透視 -->
+      <path d="M340,0 L340,145 L170,120 L170,0 Z" fill="#0f0f0f"/>
+      <!-- 後牆水平線 -->
+      <line x1="0" y1="120" x2="340" y2="120" stroke="#1e1e1e" stroke-width="1"/>
+      <!-- 左側陳設：書櫃/架子 -->
+      <rect x="0" y="20" width="52" height="118" rx="2" fill="#141412" stroke="#1e1e1a" stroke-width="1"/>
+      <rect x="4" y="26" width="44" height="14" rx="1" fill="#1a1a18"/>
+      <rect x="4" y="44" width="44" height="14" rx="1" fill="#181816"/>
+      <rect x="4" y="62" width="44" height="14" rx="1" fill="#1a1a18"/>
+      <rect x="4" y="80" width="44" height="14" rx="1" fill="#161614"/>
+      <rect x="4" y="98" width="44" height="14" rx="1" fill="#1a1a18"/>
+      <!-- 書本 小色塊 -->
+      <rect x="6" y="28" width="6" height="10" rx="1" fill="#2a1a10"/>
+      <rect x="14" y="28" width="5" height="10" rx="1" fill="#0a1a2a"/>
+      <rect x="21" y="28" width="7" height="10" rx="1" fill="#1a2a10"/>
+      <rect x="30" y="28" width="5" height="10" rx="1" fill="#2a2a0a"/>
+      <rect x="6" y="46" width="8" height="10" rx="1" fill="#0a2a1a"/>
+      <rect x="16" y="46" width="6" height="10" rx="1" fill="#2a1a18"/>
+      <rect x="24" y="46" width="7" height="10" rx="1" fill="#1a1a2a"/>
+      <!-- 右側陳設：小植栽/燈 -->
+      <rect x="288" y="60" width="52" height="78" rx="2" fill="#121210" stroke="#1e1e1c" stroke-width="1"/>
+      <!-- 植栽 -->
+      <ellipse cx="314" cy="68" rx="16" ry="10" fill="#0a1a08"/>
+      <path d="M306,68 Q310,52 314,48 Q318,52 322,68" fill="#0e240a"/>
+      <path d="M308,65 Q305,54 308,50 Q312,56 310,65" fill="#0a1e08"/>
+      <rect x="310" y="70" width="8" height="14" rx="2" fill="#1a120a"/>
+      <!-- 燈光暈 上方打光 -->
+      <radialGradient id="kl13" cx="50%" cy="0%" r="60%">
+        <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.04"/>
+        <stop offset="100%" style="stop-color:#000000;stop-opacity:0"/>
+      </radialGradient>
+      <rect width="340" height="200" fill="url(#kl13)"/>
+      
+      <!-- 椅子 低矮椅背 + 椅腳 -->
+      <!-- 椅座 -->
+      <rect x="140" y="130" width="60" height="12" rx="3" fill="#1a1814" stroke="#1e1c16"/>
+      <!-- 椅背 (矮，只到肩膀) -->
+      <rect x="146" y="100" width="48" height="34" rx="3" fill="#161412" stroke="#1e1c16"/>
+      <!-- 椅腳 四支 -->
+      <line x1="146" y1="142" x2="142" y2="190" stroke="#111" stroke-width="5" stroke-linecap="round"/>
+      <line x1="194" y1="142" x2="198" y2="190" stroke="#111" stroke-width="5" stroke-linecap="round"/>
+      <!-- 前椅腳 -->
+      <line x1="154" y1="142" x2="150" y2="190" stroke="#141210" stroke-width="4" stroke-linecap="round"/>
+      <line x1="186" y1="142" x2="190" y2="190" stroke="#141210" stroke-width="4" stroke-linecap="round"/>
+      <!-- 人 坐姿 MS -->
+      <circle cx="170" cy="62" r="22" fill="#2a2820"/>
+      <rect x="148" y="86" width="44" height="48" rx="4" fill="#2a2820"/>
+      <!-- 肩膀 -->
+      <ellipse cx="142" cy="92" rx="12" ry="8" fill="#2a2820"/>
+      <ellipse cx="198" cy="92" rx="12" ry="8" fill="#2a2820"/>
+      <!-- 頸部 -->
+      <rect x="162" y="83" width="16" height="9" rx="3" fill="#2a2820"/>
+      <!-- 手勢 右手側伸 (色塊已移除) -->
+    </svg></div>
+    <div class="scene-info">
+      <div class="scene-top"><span class="scene-num">#14</span><div class="scene-badges"><span class="badge type-口播">口播景</span><span class="badge time">3"</span></div></div>
+      <div class="camera-code">MS · Static · 手勢強調</div>
+      <div class="scene-vo">「身體摸不清節奏，防禦模式就不開啟，代謝不掉」</div>
+      <div class="scene-post">highlight → 摸不清節奏、代謝不掉 · 重點色</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- PART 03 個案見證 -->
+<div class="phase-label">PART 03 · 個案見證</div>
+<div class="scene-grid">
+
+  <!-- 看診輪播 -->
+  <div class="scene-card">
+    <div class="segment-strip seg-solution"></div>
+    <div class="scene-visual"><svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">
+      <rect width="340" height="200" fill="#0d0d0d"/>
+      <!-- 照片牆 5列x4行 共20格 強調數量 -->
+      <!-- row1 -->
+      <rect x="4"   y="4"  width="62" height="44" rx="2" fill="#1a1a18" stroke="#222"/>
+      <rect x="70"  y="4"  width="62" height="44" rx="2" fill="#191918" stroke="#222"/>
+      <rect x="136" y="4"  width="62" height="44" rx="2" fill="#1a1a18" stroke="#222"/>
+      <rect x="202" y="4"  width="62" height="44" rx="2" fill="#181a18" stroke="#222"/>
+      <rect x="268" y="4"  width="68" height="44" rx="2" fill="#1a1a18" stroke="#222"/>
+      <!-- row1 人物剪影 -->
+      <circle cx="35"  cy="18" r="7" fill="#2a2828"/><rect x="28" y="27" width="14" height="18" rx="2" fill="#2a2828"/>
+      <circle cx="101" cy="18" r="7" fill="#282a28"/><rect x="94" y="27" width="14" height="18" rx="2" fill="#282a28"/>
+      <circle cx="167" cy="18" r="7" fill="#2a2828"/><rect x="160" y="27" width="14" height="18" rx="2" fill="#2a2828"/>
+      <circle cx="233" cy="18" r="7" fill="#282828"/><rect x="226" y="27" width="14" height="18" rx="2" fill="#282828"/>
+      <circle cx="302" cy="18" r="7" fill="#2a2a28"/><rect x="295" y="27" width="14" height="18" rx="2" fill="#2a2a28"/>
+      <!-- row2 -->
+      <rect x="4"   y="52" width="62" height="44" rx="2" fill="#181818" stroke="#222"/>
+      <rect x="70"  y="52" width="62" height="44" rx="2" fill="#1a1a18" stroke="#222"/>
+      <rect x="136" y="52" width="62" height="44" rx="2" fill="#191919" stroke="#222"/>
+      <rect x="202" y="52" width="62" height="44" rx="2" fill="#1a1818" stroke="#222"/>
+      <rect x="268" y="52" width="68" height="44" rx="2" fill="#181a18" stroke="#222"/>
+      <circle cx="35"  cy="66" r="7" fill="#262626"/><rect x="28" y="75" width="14" height="18" rx="2" fill="#262626"/>
+      <circle cx="101" cy="66" r="7" fill="#282828"/><rect x="94" y="75" width="14" height="18" rx="2" fill="#282828"/>
+      <circle cx="167" cy="66" r="7" fill="#262628"/><rect x="160" y="75" width="14" height="18" rx="2" fill="#262628"/>
+      <circle cx="233" cy="66" r="7" fill="#2a2828"/><rect x="226" y="75" width="14" height="18" rx="2" fill="#2a2828"/>
+      <circle cx="302" cy="66" r="7" fill="#282828"/><rect x="295" y="75" width="14" height="18" rx="2" fill="#282828"/>
+      <!-- row3 -->
+      <rect x="4"   y="100" width="62" height="44" rx="2" fill="#1a1a18" stroke="#222"/>
+      <rect x="70"  y="100" width="62" height="44" rx="2" fill="#181818" stroke="#222"/>
+      <rect x="136" y="100" width="62" height="44" rx="2" fill="#1a1a1a" stroke="#222"/>
+      <rect x="202" y="100" width="62" height="44" rx="2" fill="#181a18" stroke="#222"/>
+      <rect x="268" y="100" width="68" height="44" rx="2" fill="#1a1818" stroke="#222"/>
+      <circle cx="35"  cy="114" r="7" fill="#2a2828"/><rect x="28" y="123" width="14" height="18" rx="2" fill="#2a2828"/>
+      <circle cx="101" cy="114" r="7" fill="#262828"/><rect x="94" y="123" width="14" height="18" rx="2" fill="#262828"/>
+      <circle cx="167" cy="114" r="7" fill="#2a2a28"/><rect x="160" y="123" width="14" height="18" rx="2" fill="#2a2a28"/>
+      <circle cx="233" cy="114" r="7" fill="#282828"/><rect x="226" y="123" width="14" height="18" rx="2" fill="#282828"/>
+      <circle cx="302" cy="114" r="7" fill="#2a2828"/><rect x="295" y="123" width="14" height="18" rx="2" fill="#2a2828"/>
+      <!-- row4 -->
+      <rect x="4"   y="148" width="62" height="48" rx="2" fill="#181818" stroke="#222"/>
+      <rect x="70"  y="148" width="62" height="48" rx="2" fill="#1a1a18" stroke="#222"/>
+      <rect x="136" y="148" width="62" height="48" rx="2" fill="#181a18" stroke="#222"/>
+      <rect x="202" y="148" width="62" height="48" rx="2" fill="#1a1818" stroke="#222"/>
+      <rect x="268" y="148" width="68" height="48" rx="2" fill="#1a1a18" stroke="#222"/>
+      <circle cx="35"  cy="162" r="7" fill="#262626"/><rect x="28" y="171" width="14" height="18" rx="2" fill="#262626"/>
+      <circle cx="101" cy="162" r="7" fill="#282828"/><rect x="94" y="171" width="14" height="18" rx="2" fill="#282828"/>
+      <circle cx="167" cy="162" r="7" fill="#2a2828"/><rect x="160" y="171" width="14" height="18" rx="2" fill="#2a2828"/>
+      <circle cx="233" cy="162" r="7" fill="#262828"/><rect x="226" y="171" width="14" height="18" rx="2" fill="#262828"/>
+      <circle cx="302" cy="162" r="7" fill="#282828"/><rect x="295" y="171" width="14" height="18" rx="2" fill="#282828"/>
+      <!-- 10,000+ 疊加中央 半透明底 -->
+      <rect x="88" y="76" width="164" height="48" rx="6" fill="#000" opacity="0.72"/>
+      <text x="170" y="107" fill="#c8f135" font-size="28" font-family="'Bebas Neue', sans-serif" text-anchor="middle" letter-spacing="2">10,000+</text>
+    </svg></div>
+    <div class="scene-info">
+      <div class="scene-top"><span class="scene-num">#15</span><div class="scene-badges"><span class="badge type-Broll">看診輪播</span><span class="badge time">4"</span></div></div>
+      <div class="camera-code">看診照片 · 方向性推入 · 每張約1"</div>
+      <div class="scene-vo">「我的門診裡超過一萬個減重個案，」</div>
+      <div class="scene-post">照片推入輪播 · 10,000+ 浮出疊加<br>highlight → 一萬個 · 重點色 · 需備5張以上</div>
+    </div>
+  </div>
+
+  <!-- CU -->
+  <div class="scene-card">
+    <div class="segment-strip seg-solution"></div>
+    <div class="scene-visual"><svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">
+      
+      <!-- 空間背景 深度感 -->
+      <!-- 後牆 -->
+      <rect width="340" height="200" fill="#0e0e0e"/>
+      <!-- 地板透視 -->
+      <path d="M0,200 L0,145 L170,120 L340,145 L340,200 Z" fill="#131310"/>
+      <!-- 左牆透視 -->
+      <path d="M0,0 L0,145 L170,120 L170,0 Z" fill="#111111"/>
+      <!-- 右牆透視 -->
+      <path d="M340,0 L340,145 L170,120 L170,0 Z" fill="#0f0f0f"/>
+      <!-- 後牆水平線 -->
+      <line x1="0" y1="120" x2="340" y2="120" stroke="#1e1e1e" stroke-width="1"/>
+      <!-- 左側陳設：書櫃/架子 -->
+      <rect x="0" y="20" width="52" height="118" rx="2" fill="#141412" stroke="#1e1e1a" stroke-width="1"/>
+      <rect x="4" y="26" width="44" height="14" rx="1" fill="#1a1a18"/>
+      <rect x="4" y="44" width="44" height="14" rx="1" fill="#181816"/>
+      <rect x="4" y="62" width="44" height="14" rx="1" fill="#1a1a18"/>
+      <rect x="4" y="80" width="44" height="14" rx="1" fill="#161614"/>
+      <rect x="4" y="98" width="44" height="14" rx="1" fill="#1a1a18"/>
+      <!-- 書本 小色塊 -->
+      <rect x="6" y="28" width="6" height="10" rx="1" fill="#2a1a10"/>
+      <rect x="14" y="28" width="5" height="10" rx="1" fill="#0a1a2a"/>
+      <rect x="21" y="28" width="7" height="10" rx="1" fill="#1a2a10"/>
+      <rect x="30" y="28" width="5" height="10" rx="1" fill="#2a2a0a"/>
+      <rect x="6" y="46" width="8" height="10" rx="1" fill="#0a2a1a"/>
+      <rect x="16" y="46" width="6" height="10" rx="1" fill="#2a1a18"/>
+      <rect x="24" y="46" width="7" height="10" rx="1" fill="#1a1a2a"/>
+      <!-- 右側陳設：小植栽/燈 -->
+      <rect x="288" y="60" width="52" height="78" rx="2" fill="#121210" stroke="#1e1e1c" stroke-width="1"/>
+      <!-- 植栽 -->
+      <ellipse cx="314" cy="68" rx="16" ry="10" fill="#0a1a08"/>
+      <path d="M306,68 Q310,52 314,48 Q318,52 322,68" fill="#0e240a"/>
+      <path d="M308,65 Q305,54 308,50 Q312,56 310,65" fill="#0a1e08"/>
+      <rect x="310" y="70" width="8" height="14" rx="2" fill="#1a120a"/>
+      <!-- 燈光暈 上方打光 -->
+      <radialGradient id="klcu" cx="50%" cy="0%" r="60%">
+        <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.04"/>
+        <stop offset="100%" style="stop-color:#000000;stop-opacity:0"/>
+      </radialGradient>
+      <rect width="340" height="200" fill="url(#klcu)"/>
+      
+      <!-- 人 CU 特寫 -->
+      <circle cx="170" cy="68" r="32" fill="#2a2820"/>
+      <rect x="126" y="100" width="88" height="100" rx="4" fill="#2a2820"/>
+      <ellipse cx="122" cy="104" rx="16" ry="10" fill="#2a2820"/>
+      <ellipse cx="218" cy="104" rx="16" ry="10" fill="#2a2820"/>
+      <rect x="158" y="98" width="24" height="12" rx="3" fill="#2a2820"/>
+    </svg></div>
+    <div class="scene-info">
+      <div class="scene-top"><span class="scene-num">#16</span><div class="scene-badges"><span class="badge type-口播">口播景</span><span class="badge time">2"</span></div></div>
+      <div class="camera-code">CU · 眼神直視</div>
+      <div class="scene-vo">「都用這種方式瘦下來」</div>
+      <div class="scene-post">highlight → 瘦下來 · 重點色 · 定鏡乾淨有力</div>
+    </div>
+  </div>
+
+  <!-- 個案1 -->
+  <div class="scene-card">
+    <div class="segment-strip seg-solution"></div>
+    <div class="scene-visual"><svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">
+      <rect width="340" height="200" fill="#111"/>
+      <!-- 滿版學員照 變瘦前 — 冷色調暗色示意 -->
+      <rect width="340" height="200" fill="#141618"/>
+      <!-- 人物輪廓示意 體型較寬 -->
+      <ellipse cx="170" cy="72" rx="44" ry="46" fill="#1e2022"/>
+      <path d="M80,130 Q100,108 126,102 Q170,96 214,102 Q240,108 260,130 L268,200 L72,200 Z" fill="#1c1e20"/>
+      <!-- 冷色調光暈 -->
+      <radialGradient id="coldlight17" cx="50%" cy="35%" r="45%">
+        <stop offset="0%" style="stop-color:#8ab0c8;stop-opacity:0.06"/>
+        <stop offset="100%" style="stop-color:#000;stop-opacity:0"/>
+      </radialGradient>
+      <rect width="340" height="200" fill="url(#coldlight17)"/>
+      <!-- BEFORE 標籤 左上 -->
+      <rect x="10" y="10" width="58" height="20" rx="3" fill="#cc4444" opacity="0.85"/>
+      <text x="39" y="24" fill="#fff" font-size="10" font-weight="bold" text-anchor="middle" font-family="monospace">BEFORE</text>
+      <!-- 公斤數 壓在畫面上 大字 -->
+      <text x="170" y="120" fill="#ffffff" font-size="52" font-family="'Bebas Neue', sans-serif" text-anchor="middle" opacity="0.92" letter-spacing="2">70kg</text>
+      <!-- 說明文字 -->
+      <text x="170" y="148" fill="#aaa" font-size="9" text-anchor="middle" font-family="monospace">天天運動卻瘦不下去</text>
+      <!-- 底部需授權提示 -->
+      <rect x="0" y="178" width="340" height="22" fill="#000" opacity="0.5"/>
+      <text x="170" y="192" fill="#666" font-size="8" text-anchor="middle" font-family="monospace">學員照片（需授權）</text>
+    </svg></div>
+    <div class="scene-info">
+      <div class="scene-top"><span class="scene-num">#17</span><div class="scene-badges"><span class="badge type-Broll">學員照 BEFORE</span><span class="badge time">3"</span></div></div>
+      <div class="camera-code">滿版學員照 BEFORE · 70kg 壓字</div>
+      <div class="scene-vo">「劉小姐，70公斤，天天運動卻瘦不下去」</div>
+      <div class="scene-post">highlight → 天天運動卻瘦不下去 · 重點色<br>Side Bar：學員前後對比圖（需授權）</div>
+    </div>
+  </div>
+
+  <!-- 個案1 成果 -->
+  <div class="scene-card">
+    <div class="segment-strip seg-solution"></div>
+    <div class="scene-visual"><svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <!-- 斜切點：右上(310,0) → 左下(30,200) 更均分 -->
+        <clipPath id="clip_before18">
+          <polygon points="0,0 310,0 30,200 0,200"/>
+        </clipPath>
+        <clipPath id="clip_after18">
+          <polygon points="310,0 340,0 340,200 30,200"/>
+        </clipPath>
+        <radialGradient id="cold18" cx="30%" cy="35%" r="55%">
+          <stop offset="0%" style="stop-color:#1a2232;stop-opacity:1"/>
+          <stop offset="100%" style="stop-color:#0e1018;stop-opacity:1"/>
+        </radialGradient>
+        <radialGradient id="warm18" cx="75%" cy="65%" r="55%">
+          <stop offset="0%" style="stop-color:#1a2414;stop-opacity:1"/>
+          <stop offset="100%" style="stop-color:#0e1208;stop-opacity:1"/>
+        </radialGradient>
+      </defs>
+
+      <!-- BEFORE 左側 冷色調 -->
+      <rect width="340" height="200" fill="url(#cold18)" clip-path="url(#clip_before18)"/>
+      <!-- 體型較寬人物輪廓 -->
+      <ellipse cx="118" cy="62" rx="38" ry="40" fill="#1e2230" clip-path="url(#clip_before18)"/>
+      <path d="M54,118 Q74,100 100,94 Q118,90 136,94 Q162,100 178,118 L180,200 L50,200 Z"
+            fill="#1a1e2c" clip-path="url(#clip_before18)"/>
+      <!-- BEFORE 標籤 左上 -->
+      <rect x="10" y="10" width="58" height="20" rx="3" fill="#cc4444" opacity="0.9"/>
+      <text x="39" y="24" fill="#fff" font-size="10" font-weight="bold" text-anchor="middle" font-family="sans-serif">BEFORE</text>
+      <!-- 70kg 左側中央 充裕空間 -->
+      <text x="118" y="108" fill="#ffffff" font-size="42" font-family="'Bebas Neue', sans-serif"
+            text-anchor="middle" opacity="0.88" letter-spacing="1">70kg</text>
+
+      <!-- AFTER 右側 暖色調 -->
+      <rect width="340" height="200" fill="url(#warm18)" clip-path="url(#clip_after18)"/>
+      <!-- 體型較窄人物輪廓 -->
+      <ellipse cx="278" cy="82" rx="26" ry="34" fill="#182418" clip-path="url(#clip_after18)"/>
+      <path d="M228,140 Q242,122 262,116 Q278,112 294,116 Q314,122 328,140 L334,200 L222,200 Z"
+            fill="#141e12" clip-path="url(#clip_after18)"/>
+      <!-- AFTER 標籤 右下 -->
+      <rect x="272" y="170" width="58" height="20" rx="3" fill="#2a8a44" opacity="0.9"/>
+      <text x="301" y="184" fill="#fff" font-size="10" font-weight="bold" text-anchor="middle" font-family="sans-serif">AFTER</text>
+      <!-- -13kg 右側中央 -->
+      <text x="284" y="130" fill="#c8f135" font-size="42" font-family="'Bebas Neue', sans-serif"
+            text-anchor="middle" opacity="0.95" letter-spacing="1">-13kg</text>
+
+      <!-- 斜切線 -->
+      <line x1="310" y1="0" x2="30" y2="200" stroke="#ffffff" stroke-width="2" opacity="0.2"/>
+    </svg></div>
+    <div class="scene-info">
+      <div class="scene-top"><span class="scene-num">#18</span><div class="scene-badges"><span class="badge type-Broll">學員照 AFTER</span><span class="badge time">3"</span></div></div>
+      <div class="camera-code">斜切對比畫面 · 左上 BEFORE 70kg · 右下 AFTER -13kg</div>
+      <div class="scene-vo">「改用碳水循環法，運動天數砍半，反而瘦下 13 公斤！」</div>
+      <div class="scene-post">畫面斜切一刀 · 左上冷色 BEFORE / 右下暖色 AFTER<br>highlight → 瘦下 13 公斤 · 重點色</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- PART 04 第二個案 -->
+<div class="phase-label">PART 04 · 第二個案 &amp; 課程內容</div>
+<div class="scene-grid">
+
+  <!-- 19 澱粉圍繞沙拉 → 手移走澱粉 → 只剩沙拉 (連續鏡頭) -->
+  <div class="scene-card">
+    <div class="segment-strip seg-struggle"></div>
+    <div class="scene-visual"><svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">
+      <rect width="340" height="200" fill="#0d0d0d"/>
+      <rect x="10" y="10" width="320" height="178" rx="4" fill="#14120a" stroke="#2a2410"/>
+      <line x1="10" y1="55" x2="330" y2="55" stroke="#1a180e" stroke-width="0.5"/>
+      <line x1="10" y1="100" x2="330" y2="100" stroke="#1a180e" stroke-width="0.5"/>
+      <line x1="10" y1="145" x2="330" y2="145" stroke="#1a180e" stroke-width="0.5"/>
+      <!-- 沙拉居中 -->
+      <ellipse cx="170" cy="98" rx="36" ry="26" fill="#0e2014" stroke="#1a3a1a" stroke-width="1.5"/>
+      <ellipse cx="162" cy="92" rx="11" ry="7" fill="#1a4020"/>
+      <ellipse cx="180" cy="88" rx="9" ry="6" fill="#1e4a24"/>
+      <ellipse cx="172" cy="104" rx="8" ry="5" fill="#163818"/>
+      <ellipse cx="158" cy="103" rx="7" ry="5" fill="#224a22"/>
+      <text x="170" y="124" fill="#4a8a50" font-size="7" text-anchor="middle">沙拉</text>
+      <!-- 白飯 左 -->
+      <ellipse cx="62" cy="98" rx="34" ry="24" fill="#2a2a1e" stroke="#3a3a28" stroke-width="1" opacity="0.9"/>
+      <text x="62" y="102" fill="#888" font-size="8" text-anchor="middle">白飯</text>
+      <!-- 麵條 右 (被手推移中 — 偏右邊緣) -->
+      <ellipse cx="280" cy="98" rx="34" ry="22" fill="#2a2418" stroke="#3a3020" stroke-width="1" opacity="0.7"/>
+      <path d="M266,90 Q276,102 286,90" fill="none" stroke="#aa9966" stroke-width="1.5"/>
+      <path d="M264,98 Q274,110 284,98" fill="none" stroke="#aa9966" stroke-width="1.5"/>
+      <text x="280" y="116" fill="#666" font-size="7" text-anchor="middle">麵條</text>
+      <!-- 麵包 上 -->
+      <ellipse cx="170" cy="34" rx="34" ry="16" fill="#2a2010" stroke="#3a3018" stroke-width="1" opacity="0.85"/>
+      <text x="170" y="38" fill="#888" font-size="8" text-anchor="middle">麵包</text>
+      <!-- 地瓜 下 -->
+      <ellipse cx="170" cy="162" rx="30" ry="14" fill="#2a1a0a" stroke="#3a280e" stroke-width="1" opacity="0.85"/>
+      <text x="170" y="166" fill="#888" font-size="8" text-anchor="middle">地瓜</text>
+      <!-- 手推走右側麵條 (動作進行中) -->
+      <path d="M220,85 Q248,78 268,84" stroke="#2a1e14" stroke-width="20" stroke-linecap="round" fill="none" opacity="0.88"/>
+      <!-- 移動箭頭 -->
+      <polygon points="278,90 294,82 292,98" fill="#c8f135" opacity="0.35"/>
+    </svg></div>
+    <div class="scene-info">
+      <div class="scene-top"><span class="scene-num">#19</span><div class="scene-badges"><span class="badge type-Broll">B-roll 俯拍</span><span class="badge time">4"</span></div></div>
+      <div class="camera-code">俯拍定鏡 · 澱粉四周圍繞沙拉 → 手逐一移走澱粉 → 只剩沙拉</div>
+      <div class="scene-vo">「還有學員靠戒澱粉，」→ 手移走澱粉 →「一開始瘦很快⋯」</div>
+      <div class="scene-post">連續動作同一鏡拍攝<br>highlight → 戒澱粉 · 重點色<br>手移走時節奏配合口白，「一開始瘦很快」時桌面接近只剩沙拉</div>
+    </div>
+  </div>
+
+  <!-- 20 只剩沙拉 手持餐具 -->
+  <div class="scene-card">
+    <div class="segment-strip seg-struggle"></div>
+    <div class="scene-visual"><svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">
+      <rect width="340" height="200" fill="#0d0d0d"/>
+      <rect x="10" y="10" width="320" height="178" rx="4" fill="#14120a" stroke="#2a2410"/>
+      <line x1="10" y1="55" x2="330" y2="55" stroke="#1a180e" stroke-width="0.5"/>
+      <line x1="10" y1="100" x2="330" y2="100" stroke="#1a180e" stroke-width="0.5"/>
+      <line x1="10" y1="145" x2="330" y2="145" stroke="#1a180e" stroke-width="0.5"/>
+      <ellipse cx="170" cy="96" rx="56" ry="44" fill="#0e2014" stroke="#1a3a1a" stroke-width="1.5"/>
+      <ellipse cx="158" cy="88" rx="16" ry="10" fill="#1a4020"/>
+      <ellipse cx="184" cy="84" rx="14" ry="9" fill="#1e4a24"/>
+      <ellipse cx="178" cy="104" rx="12" ry="8" fill="#163818"/>
+      <ellipse cx="154" cy="104" rx="10" ry="7" fill="#224a22"/>
+      <ellipse cx="192" cy="98" rx="9" ry="6" fill="#1a4018"/>
+      <ellipse cx="163" cy="93" rx="8" ry="5" fill="#1e4820"/>
+      <rect x="198" y="110" width="5" height="60" rx="2.5" fill="#aaa" opacity="0.9" transform="rotate(-20,200,140)"/>
+      <line x1="193" y1="110" x2="191" y2="124" stroke="#aaa" stroke-width="2" stroke-linecap="round" transform="rotate(-20,192,117)"/>
+      <line x1="198" y1="108" x2="196" y2="124" stroke="#aaa" stroke-width="2" stroke-linecap="round" transform="rotate(-20,197,116)"/>
+      <line x1="203" y1="108" x2="201" y2="124" stroke="#aaa" stroke-width="2" stroke-linecap="round" transform="rotate(-20,202,116)"/>
+      <path d="M238,190 Q216,165 203,148" stroke="#2a1e14" stroke-width="24" stroke-linecap="round" fill="none" opacity="0.9"/>
+    </svg></div>
+    <div class="scene-info">
+      <div class="scene-top"><span class="scene-num">#20</span><div class="scene-badges"><span class="badge type-Broll">B-roll 俯拍</span><span class="badge time">3"</span></div></div>
+      <div class="camera-code">俯拍 · 桌上只剩沙拉 · 手持叉子緩慢入鏡</div>
+      <div class="scene-vo">「⋯一開始瘦很快，」</div>
+      <div class="scene-post">壓抑感：乾淨沙拉 + 緩慢入鏡的手<br>highlight → 越壓越強 · 重點色</div>
+    </div>
+  </div>
+
+  <!-- 21 過肩看零食 真正的過肩：鏡頭在人背後，對焦洋芋片 -->
+  <div class="scene-card">
+    <div class="segment-strip seg-struggle"></div>
+    <div class="scene-visual"><svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="warm21bg" cx="62%" cy="50%" r="55%">
+          <stop offset="0%" style="stop-color:#2a1e08"/>
+          <stop offset="100%" style="stop-color:#060504"/>
+        </radialGradient>
+        <radialGradient id="vig21" cx="50%" cy="40%" r="62%">
+          <stop offset="40%" style="stop-color:#000;stop-opacity:0"/>
+          <stop offset="100%" style="stop-color:#000;stop-opacity:0.5"/>
+        </radialGradient>
+      </defs>
+      <rect width="340" height="200" fill="#060504"/>
+      <rect width="340" height="200" fill="url(#warm21bg)"/>
+      <!-- 桌面 -->
+      <rect x="60" y="118" width="280" height="82" rx="2" fill="#16120a"/>
+      <line x1="60" y1="128" x2="340" y2="131" stroke="#201a08" stroke-width="0.8" opacity="0.6"/>
+
+      <!-- ★ 碗裝洋芋片 右側 清晰 — 碗形而非袋形 -->
+      <!-- 碗底部陰影 -->
+      <ellipse cx="252" cy="164" rx="52" ry="8" fill="#0e0a04" opacity="0.6"/>
+      <!-- 碗身 圓弧形 -->
+      <path d="M196,138 Q196,172 252,174 Q308,172 308,138 Z" fill="#2a2420" stroke="#3a3028" stroke-width="1.5"/>
+      <!-- 碗內壁 -->
+      <path d="M202,138 Q202,168 252,170 Q302,168 302,138 Z" fill="#1e1a14"/>
+      <!-- 碗口橢圓 -->
+      <ellipse cx="252" cy="138" rx="56" ry="14" fill="#282218" stroke="#3a3028" stroke-width="1.5"/>
+      <!-- 碗口內緣 -->
+      <ellipse cx="252" cy="138" rx="50" ry="11" fill="#201c12"/>
+      <!-- 洋芋片 放在碗裡 薯片形狀橢圓片 -->
+      <ellipse cx="238" cy="130" rx="18" ry="7"  fill="#4a4020" transform="rotate(-15,238,130)"/>
+      <ellipse cx="260" cy="126" rx="16" ry="6"  fill="#524628" transform="rotate(10,260,126)"/>
+      <ellipse cx="248" cy="133" rx="15" ry="6"  fill="#463e1e" transform="rotate(-5,248,133)"/>
+      <ellipse cx="268" cy="130" rx="14" ry="6"  fill="#4e4422" transform="rotate(12,268,130)"/>
+      <ellipse cx="236" cy="136" rx="13" ry="5"  fill="#423a1a" transform="rotate(8,236,136)"/>
+      <ellipse cx="258" cy="134" rx="12" ry="5"  fill="#4c4020" transform="rotate(-8,258,134)"/>
+      <!-- 碗口高光弧線 -->
+      <path d="M210,134 Q252,128 294,134" fill="none" stroke="#3a3020" stroke-width="1.5" opacity="0.6"/>
+      <text x="252" y="178" fill="#555" font-size="8" text-anchor="middle" font-family="monospace">洋芋片</text>
+
+      <!-- 人物背影 左前景 頭+肩連貫 無手 -->
+      <ellipse cx="82" cy="38" rx="36" ry="40" fill="#1e1c16"/>
+      <rect x="72" y="72" width="22" height="20" rx="4" fill="#1c1a14"/>
+      <path d="M28,92 Q58,78 94,82 Q124,82 152,94 L158,200 L18,200 Z" fill="#1a1814"/>
+      <path d="M28,92 Q10,100 0,114 L0,200 L18,200 L28,92 Z" fill="#181612"/>
+      <path d="M152,94 Q170,88 184,96 Q194,104 196,130 Q198,162 196,200 L158,200 Z" fill="#1a1814"/>
+
+      <rect width="340" height="200" fill="url(#vig21)"/>
+    </svg></div>
+    <div class="scene-info">
+      <div class="scene-top"><span class="scene-num">#21</span><div class="scene-badges"><span class="badge type-Broll">B-roll 過肩</span><span class="badge time">3"</span></div></div>
+      <div class="camera-code">過肩俯視 · 人物深色背影前景虛化 · 手伸進洋芋片袋 · 暖色室內燈光</div>
+      <div class="scene-vo">「但對澱粉的渴望越壓越強，最後崩潰暴食胖回來」</div>
+      <div class="scene-post">鏡頭從肩後上方俯視 · 深色背影虛化佔左前景<br>手從右側入鏡伸入洋芋片袋準備抓取<br>highlight → 崩潰暴食、胖回來 · 重點色</div>
+    </div>
+  </div>
+
+  <!-- 20 第二案例 純口播 -->
+  <div class="scene-card">
+    <div class="segment-strip seg-solution"></div>
+    <div class="scene-visual"><svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">
+      
+      <!-- 空間背景 深度感 -->
+      <!-- 後牆 -->
+      <rect width="340" height="200" fill="#0e0e0e"/>
+      <!-- 地板透視 -->
+      <path d="M0,200 L0,145 L170,120 L340,145 L340,200 Z" fill="#131310"/>
+      <!-- 左牆透視 -->
+      <path d="M0,0 L0,145 L170,120 L170,0 Z" fill="#111111"/>
+      <!-- 右牆透視 -->
+      <path d="M340,0 L340,145 L170,120 L170,0 Z" fill="#0f0f0f"/>
+      <!-- 後牆水平線 -->
+      <line x1="0" y1="120" x2="340" y2="120" stroke="#1e1e1e" stroke-width="1"/>
+      <!-- 左側陳設：書櫃/架子 -->
+      <rect x="0" y="20" width="52" height="118" rx="2" fill="#141412" stroke="#1e1e1a" stroke-width="1"/>
+      <rect x="4" y="26" width="44" height="14" rx="1" fill="#1a1a18"/>
+      <rect x="4" y="44" width="44" height="14" rx="1" fill="#181816"/>
+      <rect x="4" y="62" width="44" height="14" rx="1" fill="#1a1a18"/>
+      <rect x="4" y="80" width="44" height="14" rx="1" fill="#161614"/>
+      <rect x="4" y="98" width="44" height="14" rx="1" fill="#1a1a18"/>
+      <!-- 書本 小色塊 -->
+      <rect x="6" y="28" width="6" height="10" rx="1" fill="#2a1a10"/>
+      <rect x="14" y="28" width="5" height="10" rx="1" fill="#0a1a2a"/>
+      <rect x="21" y="28" width="7" height="10" rx="1" fill="#1a2a10"/>
+      <rect x="30" y="28" width="5" height="10" rx="1" fill="#2a2a0a"/>
+      <rect x="6" y="46" width="8" height="10" rx="1" fill="#0a2a1a"/>
+      <rect x="16" y="46" width="6" height="10" rx="1" fill="#2a1a18"/>
+      <rect x="24" y="46" width="7" height="10" rx="1" fill="#1a1a2a"/>
+      <!-- 右側陳設：小植栽/燈 -->
+      <rect x="288" y="60" width="52" height="78" rx="2" fill="#121210" stroke="#1e1e1c" stroke-width="1"/>
+      <!-- 植栽 -->
+      <ellipse cx="314" cy="68" rx="16" ry="10" fill="#0a1a08"/>
+      <path d="M306,68 Q310,52 314,48 Q318,52 322,68" fill="#0e240a"/>
+      <path d="M308,65 Q305,54 308,50 Q312,56 310,65" fill="#0a1e08"/>
+      <rect x="310" y="70" width="8" height="14" rx="2" fill="#1a120a"/>
+      <!-- 燈光暈 上方打光 -->
+      <radialGradient id="kl22" cx="50%" cy="0%" r="60%">
+        <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.04"/>
+        <stop offset="100%" style="stop-color:#000000;stop-opacity:0"/>
+      </radialGradient>
+      <rect width="340" height="200" fill="url(#kl22)"/>
+      
+      <!-- 椅子 低矮椅背 + 椅腳 (MCU 只露部分) -->
+      <rect x="140" y="128" width="60" height="12" rx="3" fill="#1a1814" opacity="0.7"/>
+      <rect x="146" y="100" width="48" height="30" rx="3" fill="#161412" opacity="0.7"/>
+      <line x1="146" y1="140" x2="142" y2="195" stroke="#111" stroke-width="5" stroke-linecap="round"/>
+      <line x1="194" y1="140" x2="198" y2="195" stroke="#111" stroke-width="5" stroke-linecap="round"/>
+      <!-- 人 坐姿 MCU -->
+      <circle cx="170" cy="58" r="26" fill="#2a2820"/>
+      <rect x="140" y="86" width="60" height="60" rx="4" fill="#2a2820"/>
+      <ellipse cx="136" cy="92" rx="14" ry="9" fill="#2a2820"/>
+      <ellipse cx="204" cy="92" rx="14" ry="9" fill="#2a2820"/>
+      <rect x="160" y="82" width="20" height="12" rx="3" fill="#2a2820"/>
+    </svg></div>
+    <div class="scene-info">
+      <div class="scene-top"><span class="scene-num">#22</span><div class="scene-badges"><span class="badge type-口播">口播景</span><span class="badge time">2"</span></div></div>
+      <div class="camera-code">MCU · Static</div>
+      <div class="scene-vo">「後來改用碳水循環法，能吃澱粉，還瘦 8 公斤」</div>
+      <div class="scene-post">highlight → 能吃澱粉、瘦 8 公斤 · 重點色</div>
+    </div>
+  </div>
+
+  <!-- 21 -->
+  <div class="scene-card">
+    <div class="segment-strip seg-cta"></div>
+    <div class="scene-visual"><svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">
+      
+      <!-- 空間背景 深度感 -->
+      <!-- 後牆 -->
+      <rect width="340" height="200" fill="#0e0e0e"/>
+      <!-- 地板透視 -->
+      <path d="M0,200 L0,145 L170,120 L340,145 L340,200 Z" fill="#131310"/>
+      <!-- 左牆透視 -->
+      <path d="M0,0 L0,145 L170,120 L170,0 Z" fill="#111111"/>
+      <!-- 右牆透視 -->
+      <path d="M340,0 L340,145 L170,120 L170,0 Z" fill="#0f0f0f"/>
+      <!-- 後牆水平線 -->
+      <line x1="0" y1="120" x2="340" y2="120" stroke="#1e1e1e" stroke-width="1"/>
+      <!-- 左側陳設：書櫃/架子 -->
+      <rect x="0" y="20" width="52" height="118" rx="2" fill="#141412" stroke="#1e1e1a" stroke-width="1"/>
+      <rect x="4" y="26" width="44" height="14" rx="1" fill="#1a1a18"/>
+      <rect x="4" y="44" width="44" height="14" rx="1" fill="#181816"/>
+      <rect x="4" y="62" width="44" height="14" rx="1" fill="#1a1a18"/>
+      <rect x="4" y="80" width="44" height="14" rx="1" fill="#161614"/>
+      <rect x="4" y="98" width="44" height="14" rx="1" fill="#1a1a18"/>
+      <!-- 書本 小色塊 -->
+      <rect x="6" y="28" width="6" height="10" rx="1" fill="#2a1a10"/>
+      <rect x="14" y="28" width="5" height="10" rx="1" fill="#0a1a2a"/>
+      <rect x="21" y="28" width="7" height="10" rx="1" fill="#1a2a10"/>
+      <rect x="30" y="28" width="5" height="10" rx="1" fill="#2a2a0a"/>
+      <rect x="6" y="46" width="8" height="10" rx="1" fill="#0a2a1a"/>
+      <rect x="16" y="46" width="6" height="10" rx="1" fill="#2a1a18"/>
+      <rect x="24" y="46" width="7" height="10" rx="1" fill="#1a1a2a"/>
+      <!-- 右側陳設：小植栽/燈 -->
+      <rect x="288" y="60" width="52" height="78" rx="2" fill="#121210" stroke="#1e1e1c" stroke-width="1"/>
+      <!-- 植栽 -->
+      <ellipse cx="314" cy="68" rx="16" ry="10" fill="#0a1a08"/>
+      <path d="M306,68 Q310,52 314,48 Q318,52 322,68" fill="#0e240a"/>
+      <path d="M308,65 Q305,54 308,50 Q312,56 310,65" fill="#0a1e08"/>
+      <rect x="310" y="70" width="8" height="14" rx="2" fill="#1a120a"/>
+      <!-- 燈光暈 上方打光 -->
+      <radialGradient id="kl23" cx="50%" cy="0%" r="60%">
+        <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.04"/>
+        <stop offset="100%" style="stop-color:#000000;stop-opacity:0"/>
+      </radialGradient>
+      <rect width="340" height="200" fill="url(#kl23)"/>
+      
+      <!-- 椅子 低矮椅背 + 椅腳 (MCU 只露部分) -->
+      <rect x="140" y="128" width="60" height="12" rx="3" fill="#1a1814" opacity="0.7"/>
+      <rect x="146" y="100" width="48" height="30" rx="3" fill="#161412" opacity="0.7"/>
+      <line x1="146" y1="140" x2="142" y2="195" stroke="#111" stroke-width="5" stroke-linecap="round"/>
+      <line x1="194" y1="140" x2="198" y2="195" stroke="#111" stroke-width="5" stroke-linecap="round"/>
+      <!-- 人 坐姿 MCU -->
+      <circle cx="170" cy="58" r="26" fill="#2a2820"/>
+      <rect x="140" y="86" width="60" height="60" rx="4" fill="#2a2820"/>
+      <ellipse cx="136" cy="92" rx="14" ry="9" fill="#2a2820"/>
+      <ellipse cx="204" cy="92" rx="14" ry="9" fill="#2a2820"/>
+      <rect x="160" y="82" width="20" height="12" rx="3" fill="#2a2820"/>
+    </svg></div>
+    <div class="scene-info">
+      <div class="scene-top"><span class="scene-num">#23</span><div class="scene-badges"><span class="badge type-口播">口播景</span><span class="badge time">2"</span></div></div>
+      <div class="camera-code">MCU · Static · 溫和眼神</div>
+      <div class="scene-vo">「你也可以跟他們一樣變瘦」</div>
+      <div class="scene-post">highlight → 你也可以 · 重點色</div>
+    </div>
+  </div>
+
+  <!-- 22 階梯圖 -->
+  <div class="scene-card">
+    <div class="segment-strip seg-cta"></div>
+    <div class="scene-visual"><svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">
+      <rect width="340" height="200" fill="#0d0d0d"/>
+      <text x="170" y="22" fill="#c8f135" font-size="13" font-family="'Bebas Neue', sans-serif" text-anchor="middle" letter-spacing="2">28 DAY PLAN</text>
+      <rect x="22" y="152" width="62" height="30" rx="3" fill="#1a2a0a" stroke="#c8f135" stroke-width="1" opacity="0.7"/>
+      <text x="53" y="171" fill="#c8f135" font-size="10" text-anchor="middle" font-weight="bold">W1</text>
+      <text x="53" y="142" fill="#777" font-size="7" text-anchor="middle">建立循環節奏</text>
+      <rect x="96" y="120" width="62" height="62" rx="3" fill="#1a2a0a" stroke="#c8f135" stroke-width="1" opacity="0.8"/>
+      <text x="127" y="155" fill="#c8f135" font-size="10" text-anchor="middle" font-weight="bold">W2</text>
+      <text x="127" y="112" fill="#777" font-size="7" text-anchor="middle">身體適應期</text>
+      <rect x="170" y="86" width="62" height="96" rx="3" fill="#1a2a0a" stroke="#c8f135" stroke-width="1" opacity="0.9"/>
+      <text x="201" y="138" fill="#c8f135" font-size="10" text-anchor="middle" font-weight="bold">W3</text>
+      <text x="201" y="78" fill="#777" font-size="7" text-anchor="middle">突破停滯期</text>
+      <rect x="244" y="50" width="76" height="132" rx="3" fill="#c8f135" opacity="0.15" stroke="#c8f135" stroke-width="1.5"/>
+      <text x="282" y="120" fill="#c8f135" font-size="10" text-anchor="middle" font-weight="bold">W4</text>
+      <text x="282" y="42" fill="#c8f135" font-size="7" text-anchor="middle">建立長期習慣</text>
+      <path d="M53,150 L127,118 L201,84 L282,48" fill="none" stroke="#c8f135" stroke-width="1" stroke-dasharray="3,3" opacity="0.4"/>
+    </svg></div>
+    <div class="scene-info">
+      <div class="scene-top"><span class="scene-num">#24</span><div class="scene-badges"><span class="badge type-簡報">簡報動畫</span><span class="badge time">5"</span></div></div>
+      <div class="camera-code">28天階梯圖 · W1→W4 逐步踩亮</div>
+      <div class="scene-vo">「這堂課給你完整的 28 天瘦身計劃，每步都幫你鋪好」</div>
+      <div class="scene-post">W1 建立循環節奏 / W2 身體適應期<br>W3 突破停滯期 / W4 建立長期習慣<br>每階隨口白節奏踩亮，標題從右滑入</div>
+    </div>
+  </div>
+
+  <!-- 23 三格外食 -->
+  <div class="scene-card">
+    <div class="segment-strip seg-cta"></div>
+    <div class="scene-visual"><svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">
+      <rect width="340" height="200" fill="#0d0d0d"/>
+      <!-- 圓餅三格 滿版 無圓框 中心(170,100) -->
+      <path d="M170,100 L170,-400 A500,500 0 0,1 603,350 Z" fill="#161810"/>
+      <path d="M170,100 L603,350 A500,500 0 0,1 -263,350 Z" fill="#121a14"/>
+      <path d="M170,100 L-263,350 A500,500 0 0,1 170,-400 Z" fill="#161410"/>
+      <!-- 分割線 -->
+      <line x1="170" y1="100" x2="170" y2="-400" stroke="#2a2a24" stroke-width="1.5"/>
+      <line x1="170" y1="100" x2="603" y2="350" stroke="#2a2a24" stroke-width="1.5"/>
+      <line x1="170" y1="100" x2="-263" y2="350" stroke="#2a2a24" stroke-width="1.5"/>
+      <!-- 扇1 便當 右上 -->
+      <rect x="232" y="28" width="40" height="30" rx="2" fill="#222018" stroke="#2e2c1a"/>
+      <rect x="235" y="31" width="16" height="11" rx="1" fill="#2c2814"/>
+      <rect x="254"  y="31" width="16" height="11" rx="1" fill="#26301a"/>
+      <rect x="235" y="44"  width="34" height="9"  rx="1" fill="#281e10"/>
+      <text x="252" y="68" fill="#aaa" font-size="9" text-anchor="middle">便當</text>
+      <!-- 扇2 自助餐 下方 -->
+      <ellipse cx="170" cy="144" rx="22" ry="15" fill="#1a2018" stroke="#222c1a"/>
+      <ellipse cx="160" cy="140" rx="8" ry="5" fill="#1e2c18"/>
+      <ellipse cx="178"  cy="139" rx="7" ry="5" fill="#1c2814"/>
+      <ellipse cx="170"    cy="147"  rx="9" ry="5" fill="#182018"/>
+      <text x="170" y="166" fill="#aaa" font-size="9" text-anchor="middle">自助餐</text>
+      <!-- 扇3 滷味 左上 -->
+      <ellipse cx="82" cy="36" rx="20" ry="14" fill="#1c1610" stroke="#261e12"/>
+      <ellipse cx="74" cy="32" rx="7" ry="5" fill="#221a0c"/>
+      <ellipse cx="89" cy="33" rx="6" ry="4" fill="#201610"/>
+      <ellipse cx="82"   cy="39"  rx="8" ry="4" fill="#241c10"/>
+      <text x="82" y="57" fill="#aaa" font-size="9" text-anchor="middle">滷味</text>
+      <!-- 底部標籤 -->
+      <rect x="62" y="172" width="216" height="22" rx="3" fill="#000" opacity="0.65"/>
+      <text x="170" y="187" fill="#c8f135" font-size="10" text-anchor="middle" font-family="'DM Mono', monospace" letter-spacing="1">外食族減重菜單</text>
+    </svg></div>
+    <div class="scene-info">
+      <div class="scene-top"><span class="scene-num">#25</span><div class="scene-badges"><span class="badge type-分割">三格分割</span><span class="badge time">3"</span></div></div>
+      <div class="camera-code">三格畫面 · 方向性推入轉場</div>
+      <div class="scene-vo">「還有營養師專門為外食族設計的減重菜單」</div>
+      <div class="scene-post">三格推入轉場 · highlight → 外食族 · 重點色</div>
+    </div>
+  </div>
+
+  <!-- 24 三格 筆記/沙拉/運動 -->
+  <div class="scene-card">
+    <div class="segment-strip seg-cta"></div>
+    <div class="scene-visual"><svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">
+      <rect width="340" height="200" fill="#0d0d0d"/>
+      <rect x="8" y="8" width="100" height="182" rx="3" fill="#141414" stroke="#2a2a2a"/>
+      <rect x="120" y="8" width="100" height="182" rx="3" fill="#141a10" stroke="#2a2a2a"/>
+      <rect x="232" y="8" width="100" height="182" rx="3" fill="#141414" stroke="#2a2a2a"/>
+      <!-- 格1 寫筆記 -->
+      <rect x="18" y="72" width="80" height="96" rx="2" fill="#f5f0e8" opacity="0.92"/>
+      <line x1="26" y1="92" x2="90" y2="92" stroke="#ddd" stroke-width="1"/>
+      <line x1="26" y1="104" x2="90" y2="104" stroke="#ddd" stroke-width="1"/>
+      <line x1="26" y1="116" x2="90" y2="116" stroke="#ddd" stroke-width="1"/>
+      <line x1="26" y1="128" x2="90" y2="128" stroke="#ddd" stroke-width="1"/>
+      <line x1="26" y1="140" x2="78" y2="140" stroke="#ddd" stroke-width="1"/>
+      <path d="M82,70 Q86,62 90,66 Q94,70 88,110 L84,110 Z" fill="#333" opacity="0.85"/>
+      <!-- 手 -->
+      <path d="M18,160 Q36,144 58,148" stroke="#2a1e14" stroke-width="18" stroke-linecap="round" fill="none" opacity="0.85"/>
+      <text x="58" y="190" fill="#888" font-size="7" text-anchor="middle">寫計劃</text>
+      <!-- 格2 拌沙拉 -->
+      <ellipse cx="170" cy="94" rx="38" ry="30" fill="#0e2010" stroke="#1a3a1a" stroke-width="1"/>
+      <ellipse cx="162" cy="88" rx="12" ry="8" fill="#1a4020"/>
+      <ellipse cx="180" cy="84" rx="10" ry="7" fill="#1e4a24"/>
+      <ellipse cx="176" cy="100" rx="9" ry="6" fill="#163818"/>
+      <ellipse cx="160" cy="100" rx="8" ry="5" fill="#224a22"/>
+      <!-- 湯匙 -->
+      <path d="M192,70 Q200,86 196,102" fill="none" stroke="#999" stroke-width="2.5" stroke-linecap="round"/>
+      <ellipse cx="194" cy="68" rx="6" ry="4" fill="#999"/>
+      <text x="170" y="146" fill="#4a8a50" font-size="7" text-anchor="middle">拌沙拉</text>
+      <!-- 格3 運動 -->
+      <circle cx="282" cy="60" r="20" fill="#2a2a2a"/>
+      <rect x="264" y="84" width="36" height="30" rx="3" fill="#2a2a2a"/>
+      <path d="M264,114 Q252,138 250,165" stroke="#2a2a2a" stroke-width="14" stroke-linecap="round" fill="none"/>
+      <path d="M300,114 Q312,138 314,165" stroke="#2a2a2a" stroke-width="14" stroke-linecap="round" fill="none"/>
+      <path d="M264,92 Q246,106 244,122" stroke="#2a2a2a" stroke-width="12" stroke-linecap="round" fill="none"/>
+      <path d="M300,92 Q318,106 320,122" stroke="#2a2a2a" stroke-width="12" stroke-linecap="round" fill="none"/>
+      <text x="282" y="190" fill="#888" font-size="7" text-anchor="middle">運動</text>
+      <text x="16" y="16" fill="#555" font-size="10" font-family="monospace">三格分割</text>
+    </svg></div>
+    <div class="scene-info">
+      <div class="scene-top"><span class="scene-num">#26</span><div class="scene-badges"><span class="badge type-分割">三格分割</span><span class="badge time">4"</span></div></div>
+      <div class="camera-code">左：老師寫筆記 / 中：拌沙拉 / 右：運動</div>
+      <div class="scene-vo">「我幫你把每一步路都鋪好了，你只要照著做就好」</div>
+      <div class="scene-post">三格同時出現或依序推入<br>highlight → 你只要照著做 · 重點色</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- PART 05 CTA -->
+<div class="phase-label">PART 05 · CTA &amp; 收尾</div>
+<div class="scene-grid">
+
+  <!-- 25 -->
+  <div class="scene-card">
+    <div class="segment-strip seg-cta"></div>
+    <div class="scene-visual"><svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="kl27" cx="50%" cy="0%" r="60%">
+          <stop offset="0%" style="stop-color:#fff;stop-opacity:0.04"/>
+          <stop offset="100%" style="stop-color:#000;stop-opacity:0"/>
+        </radialGradient>
+      </defs>
+      <!-- 空間背景 -->
+      <rect width="340" height="200" fill="#0e0e0e"/>
+      <path d="M0,200 L0,145 L170,120 L340,145 L340,200 Z" fill="#131310"/>
+      <path d="M0,0 L0,145 L170,120 L170,0 Z" fill="#111111"/>
+      <path d="M340,0 L340,145 L170,120 L170,0 Z" fill="#0f0f0f"/>
+      <line x1="0" y1="120" x2="340" y2="120" stroke="#1e1e1e" stroke-width="1"/>
+      <rect x="0" y="20" width="52" height="118" rx="2" fill="#141412" stroke="#1e1e1a"/>
+      <rect x="4" y="26" width="44" height="14" rx="1" fill="#1a1a18"/>
+      <rect x="4" y="44" width="44" height="14" rx="1" fill="#181816"/>
+      <rect x="4" y="62" width="44" height="14" rx="1" fill="#1a1a18"/>
+      <rect x="4" y="80" width="44" height="14" rx="1" fill="#161614"/>
+      <rect x="6" y="28" width="6" height="10" rx="1" fill="#2a1a10"/>
+      <rect x="14" y="28" width="5" height="10" rx="1" fill="#0a1a2a"/>
+      <rect x="21" y="28" width="7" height="10" rx="1" fill="#1a2a10"/>
+      <rect x="288" y="60" width="52" height="78" rx="2" fill="#121210" stroke="#1e1e1c"/>
+      <ellipse cx="314" cy="68" rx="16" ry="10" fill="#0a1a08"/>
+      <path d="M306,68 Q310,52 314,48 Q318,52 322,68" fill="#0e240a"/>
+      <rect x="310" y="70" width="8" height="14" rx="2" fill="#1a120a"/>
+      <rect width="340" height="200" fill="url(#kl27)"/>
+      <!-- 椅子 -->
+      <rect x="140" y="128" width="60" height="12" rx="3" fill="#1a1814" opacity="0.7"/>
+      <rect x="146" y="100" width="48" height="30" rx="3" fill="#161412" opacity="0.7"/>
+      <line x1="146" y1="140" x2="142" y2="195" stroke="#111" stroke-width="5" stroke-linecap="round"/>
+      <line x1="194" y1="140" x2="198" y2="195" stroke="#111" stroke-width="5" stroke-linecap="round"/>
+      <!-- 人 MCU -->
+      <circle cx="170" cy="58" r="26" fill="#2a2820"/>
+      <rect x="140" y="86" width="60" height="60" rx="4" fill="#2a2820"/>
+      <ellipse cx="136" cy="92" rx="14" ry="9" fill="#2a2820"/>
+      <ellipse cx="204" cy="92" rx="14" ry="9" fill="#2a2820"/>
+      <rect x="160" y="82" width="20" height="12" rx="3" fill="#2a2820"/>
+    </svg></div>
+    <div class="scene-info">
+      <div class="scene-top"><span class="scene-num">#27</span><div class="scene-badges"><span class="badge type-口播">口播景</span><span class="badge time">3"</span></div></div>
+      <div class="camera-code">MCU · 鄭重直視</div>
+      <div class="scene-vo">「讓這次，成為你最後一次減重」</div>
+      <div class="scene-post">highlight → 最後一次減重 · 重點色加粗</div>
+    </div>
+  </div>
+
+  <!-- 26 二頭肌收尾 -->
+  <div class="scene-card">
+    <div class="segment-strip seg-cta"></div>
+    <div class="scene-visual"><svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="kl27" cx="50%" cy="0%" r="60%">
+          <stop offset="0%" style="stop-color:#fff;stop-opacity:0.04"/>
+          <stop offset="100%" style="stop-color:#000;stop-opacity:0"/>
+        </radialGradient>
+      </defs>
+      <!-- 空間背景 -->
+      <rect width="340" height="200" fill="#0e0e0e"/>
+      <path d="M0,200 L0,145 L170,120 L340,145 L340,200 Z" fill="#131310"/>
+      <path d="M0,0 L0,145 L170,120 L170,0 Z" fill="#111111"/>
+      <path d="M340,0 L340,145 L170,120 L170,0 Z" fill="#0f0f0f"/>
+      <line x1="0" y1="120" x2="340" y2="120" stroke="#1e1e1e" stroke-width="1"/>
+      <rect x="0" y="20" width="52" height="118" rx="2" fill="#141412" stroke="#1e1e1a"/>
+      <rect x="4" y="26" width="44" height="14" rx="1" fill="#1a1a18"/>
+      <rect x="4" y="44" width="44" height="14" rx="1" fill="#181816"/>
+      <rect x="4" y="62" width="44" height="14" rx="1" fill="#1a1a18"/>
+      <rect x="4" y="80" width="44" height="14" rx="1" fill="#161614"/>
+      <rect x="6" y="28" width="6" height="10" rx="1" fill="#2a1a10"/>
+      <rect x="14" y="28" width="5" height="10" rx="1" fill="#0a1a2a"/>
+      <rect x="21" y="28" width="7" height="10" rx="1" fill="#1a2a10"/>
+      <rect x="288" y="60" width="52" height="78" rx="2" fill="#121210" stroke="#1e1e1c"/>
+      <ellipse cx="314" cy="68" rx="16" ry="10" fill="#0a1a08"/>
+      <path d="M306,68 Q310,52 314,48 Q318,52 322,68" fill="#0e240a"/>
+      <rect x="310" y="70" width="8" height="14" rx="2" fill="#1a120a"/>
+      <rect width="340" height="200" fill="url(#kl27)"/>
+            <!-- 椅子 -->
+      <rect x="140" y="128" width="60" height="12" rx="3" fill="#1a1814" stroke="#1e1c16"/>
+      <rect x="146" y="100" width="48" height="30" rx="3" fill="#161412" stroke="#1e1c16"/>
+      <line x1="146" y1="140" x2="142" y2="195" stroke="#111" stroke-width="5" stroke-linecap="round"/>
+      <line x1="194" y1="140" x2="198" y2="195" stroke="#111" stroke-width="5" stroke-linecap="round"/>
+      <!-- 人 MS 坐姿 -->
+      <circle cx="170" cy="54" r="22" fill="#2a2820"/>
+      <rect x="148" y="78" width="44" height="50" rx="4" fill="#2a2820"/>
+      <ellipse cx="142" cy="86" rx="12" ry="8" fill="#2a2820"/>
+      <ellipse cx="198" cy="86" rx="12" ry="8" fill="#2a2820"/>
+      <rect x="162" y="75" width="16" height="9" rx="3" fill="#2a2820"/>
+      <!-- 右手舉起展示二頭肌 -->
+      <path d="M192,84 Q210,68 208,50 Q218,44 224,54 Q230,66 216,82 Q210,88 196,90 Z" fill="#2a2820"/>
+      <!-- 二頭肌強調圈 -->
+      <circle cx="214" cy="58" r="13" fill="none" stroke="#c8f135" stroke-width="1.5" stroke-dasharray="2,2" opacity="0.7"/>
+      <!-- 左手自然垂 -->
+      <path d="M148,88 Q132,114 130,136" stroke="#2a2820" stroke-width="13" stroke-linecap="round" fill="none"/>
+    </svg></div>
+    <div class="scene-info">
+      <div class="scene-top"><span class="scene-num">#28</span><div class="scene-badges"><span class="badge type-口播">口播景</span><span class="badge time">3"</span></div></div>
+      <div class="camera-code">MS · 單手舉起展示二頭肌</div>
+      <div class="scene-vo">「我是蕭捷健，這是我的師父課程」</div>
+      <div class="scene-post">highlight → 蕭捷健 · 重點色 · 自信收尾</div>
+    </div>
+  </div>
+
+  <!-- 品牌結尾 -->
+  <div class="scene-card">
+    <div class="segment-strip seg-brand"></div>
+    <div class="scene-visual"><svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">
+      <rect width="340" height="200" fill="#0a0a0a"/>
+      <rect x="120" y="58" width="100" height="80" rx="4" fill="#141414" stroke="#2a2a2a"/>
+      <text x="170" y="106" fill="#c8f135" font-size="14" font-family="'Bebas Neue', sans-serif" text-anchor="middle" letter-spacing="3">ShiFu</text>
+      <rect x="105" y="48" width="130" height="100" rx="6" fill="none" stroke="#c8f135" stroke-width="0.5" opacity="0.2"/>
+      <text x="170" y="168" fill="#555" font-size="9" text-anchor="middle" font-family="monospace" letter-spacing="1">碳水循環減重法</text>
+    </svg></div>
+    <div class="scene-info">
+      <div class="scene-top"><span class="scene-num">#29</span><div class="scene-badges"><span class="badge type-品牌">品牌結尾</span><span class="badge time">3"</span></div></div>
+      <div class="camera-code">ShiFu Logo + 課程名稱動畫</div>
+      <div class="scene-vo">（片尾音樂）</div>
+      <div class="scene-post">品牌標準片尾動畫</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- HIGHLIGHT 系統 -->
+<div class="hl-system">
+  <h3>HIGHLIGHT 色彩系統</h3>
+  <div class="hl-row">
+    <div class="hl-chip" style="background:rgba(255,68,68,0.2);color:#ff8888;border:1px solid #ff4444;">痛點 · 問題 · 錯誤</div>
+    <div class="hl-chip" style="background:rgba(255,140,66,0.2);color:#ffaa66;border:1px solid #ff8c42;">掙扎 · 壓力</div>
+    <div class="hl-chip" style="background:rgba(200,241,53,0.2);color:#c8f135;border:1px solid #c8f135;">翻轉 · 關鍵詞 · 成果</div>
+    <div class="hl-chip" style="background:rgba(77,166,255,0.2);color:#4da6ff;border:1px solid #4da6ff;">數據 · 專有名詞</div>
+    <div class="hl-chip" style="background:rgba(240,240,240,0.1);color:#f0f0f0;border:1px solid #444;">人名 · 品牌</div>
+  </div>
+  <p style="margin-top:12px;font-size:11px;color:#555;font-family:'DM Mono',monospace;">所有大字卡改為字幕 highlight 形式 · 關鍵詞加底色標記 · 不做獨立滿版字卡</p>
+</div>
+
+<!-- 圖例 -->
+<div class="legend">
+  <div class="legend-section">
+    <h3>鏡位 Framing</h3>
+    <div class="legend-item"><span class="legend-code">MS</span><span>中景 · 腰部以上</span></div>
+    <div class="legend-item"><span class="legend-code">MCU</span><span>中特寫 · 胸部以上</span></div>
+    <div class="legend-item"><span class="legend-code">CU</span><span>特寫 · 肩膀以上</span></div>
+  </div>
+  <div class="legend-section">
+    <h3>運動 Motion</h3>
+    <div class="legend-item"><span class="legend-code">Static</span><span>定鏡</span></div>
+    <div class="legend-item"><span class="legend-code">Zoom in</span><span>後製推進</span></div>
+    <div class="legend-item"><span class="legend-code">Zoom out</span><span>拉出場景</span></div>
+    <div class="legend-item"><span class="legend-code">Crop</span><span>後製裁切跳接</span></div>
+  </div>
+  <div class="legend-section">
+    <h3>段落色條</h3>
+    <div class="legend-item"><span class="legend-code" style="color:#ff4444;">■</span><span>痛點 Pain</span></div>
+    <div class="legend-item"><span class="legend-code" style="color:#ff8c42;">■</span><span>掙扎 Struggle</span></div>
+    <div class="legend-item"><span class="legend-code" style="color:#c8f135;">■</span><span>翻轉 Turn / CTA</span></div>
+    <div class="legend-item"><span class="legend-code" style="color:#4da6ff;">■</span><span>解法 Solution</span></div>
+  </div>
+  <div class="legend-section">
+    <h3>場景類型</h3>
+    <div class="legend-item"><span class="legend-code" style="color:#4da6ff;">口播景</span><span>老師直接面對鏡頭</span></div>
+    <div class="legend-item"><span class="legend-code" style="color:#ff8c42;">簡報動畫</span><span>滿版圖表 / 概念動畫</span></div>
+    <div class="legend-item"><span class="legend-code" style="color:#a78bfa;">B-roll</span><span>情境 / 看診 / 運動素材</span></div>
+    <div class="legend-item"><span class="legend-code" style="color:#34d399;">分割畫面</span><span>兩格 / 三格並排</span></div>
+    <div class="legend-item"><span class="legend-code" style="color:#c8f135;">主視覺</span><span>課程標準字間歇</span></div>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="footer-left">STORYBOARD · 蕭捷健減重課 · V10 · 2026</div>
+  <div class="footer-right">ShiFu × Claude</div>
+</div>
+</body>
+</html>
