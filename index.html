@@ -590,37 +590,84 @@
   <div class="scene-card">
     <div class="segment-strip seg-turn"></div>
     <div class="scene-visual"><svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">
-      <rect width="340" height="200" fill="#0d0d0d"/>
-      <rect x="14" y="16" width="144" height="168" rx="5" fill="#1a1010" stroke="#ff4444" stroke-width="1"/>
-      <text x="86" y="36" fill="#ff4444" font-size="11" font-family="monospace" text-anchor="middle">❌ 傳統</text>
-      <rect x="28" y="44" width="116" height="22" rx="3" fill="#2a1a1a"/>
-      <text x="86" y="59" fill="#cc8888" font-size="9" text-anchor="middle">每天少吃</text>
-      <rect x="28" y="72" width="116" height="22" rx="3" fill="#2a1a1a"/>
-      <text x="86" y="87" fill="#cc8888" font-size="9" text-anchor="middle">每天多動</text>
-      <line x1="86" y1="98" x2="86" y2="120" stroke="#ff4444" stroke-width="1.5"/>
-      <polygon points="80,116 92,116 86,124" fill="#ff4444"/>
-      <rect x="28" y="128" width="116" height="30" rx="3" fill="#3a1010" stroke="#ff4444" stroke-width="0.5"/>
-      <text x="86" y="141" fill="#ff6644" font-size="8" text-anchor="middle" font-family="monospace">代謝越來越低</text>
-      <text x="86" y="153" fill="#ff4444" font-size="8" text-anchor="middle" font-family="monospace">體重卡住</text>
-      <line x1="24" y1="26" x2="148" y2="174" stroke="#ff4444" stroke-width="1.5" opacity="0.2"/>
-      <line x1="148" y1="26" x2="24" y2="174" stroke="#ff4444" stroke-width="1.5" opacity="0.2"/>
-      <rect x="182" y="16" width="144" height="168" rx="5" fill="#0a1a0a" stroke="#c8f135" stroke-width="1"/>
-      <text x="254" y="36" fill="#c8f135" font-size="11" font-family="monospace" text-anchor="middle">✅ 碳水循環</text>
-      <rect x="196" y="44" width="116" height="22" rx="3" fill="#1a2a0a"/>
-      <text x="254" y="59" fill="#c8f135" font-size="9" text-anchor="middle">高碳日 大碗 + 運動</text>
-      <rect x="196" y="72" width="116" height="22" rx="3" fill="#0a1a1a"/>
-      <text x="254" y="87" fill="#4da6ff" font-size="9" text-anchor="middle">低碳日 小碗 + 輕運動</text>
-      <line x1="254" y1="98" x2="254" y2="120" stroke="#c8f135" stroke-width="1.5"/>
-      <line x1="244" y1="110" x2="254" y2="122" stroke="#c8f135" stroke-width="1.5"/>
-      <line x1="264" y1="110" x2="254" y2="122" stroke="#c8f135" stroke-width="1.5"/>
-      <rect x="196" y="128" width="116" height="30" rx="3" fill="#0a2a0a" stroke="#c8f135" stroke-width="0.5"/>
-      <text x="254" y="141" fill="#88cc88" font-size="8" text-anchor="middle" font-family="monospace">代謝維持正常</text>
-      <text x="254" y="153" fill="#c8f135" font-size="8" text-anchor="middle" font-family="monospace">體重持續下降</text>
-      <text x="16" y="12" fill="#555" font-size="10" font-family="monospace">簡報動畫 · 對比圖</text>
+      <defs>
+        <linearGradient id="tableGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" style="stop-color:#1a1610"/>
+          <stop offset="100%" style="stop-color:#0e0c08"/>
+        </linearGradient>
+        <linearGradient id="roomGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" style="stop-color:#0e0e0e"/>
+          <stop offset="100%" style="stop-color:#141210"/>
+        </linearGradient>
+        <!-- 透視消失點輔助：桌子往遠端收窄 -->
+      </defs>
+
+      <!-- 背景 室內暗色 -->
+      <rect width="340" height="200" fill="url(#roomGrad)"/>
+      <!-- 後牆 -->
+      <rect x="0" y="0" width="340" height="110" fill="#0c0c0c"/>
+      <line x1="0" y1="110" x2="340" y2="110" stroke="#1a1a18" stroke-width="1"/>
+
+      <!-- 長桌 透視 從近端(寬)往遠端(窄)收 — dolly in 起點視角 -->
+      <!-- 桌面 梯形 近寬遠窄 -->
+      <polygon points="0,200 340,200 290,95 50,95" fill="url(#tableGrad)" stroke="#222018" stroke-width="1"/>
+      <!-- 桌面木紋線 透視收束 -->
+      <line x1="170" y1="200" x2="170" y2="95"  stroke="#1e1a10" stroke-width="0.6" opacity="0.5"/>
+      <line x1="85"  y1="200" x2="132" y2="95"  stroke="#1e1a10" stroke-width="0.5" opacity="0.4"/>
+      <line x1="255" y1="200" x2="208" y2="95"  stroke="#1e1a10" stroke-width="0.5" opacity="0.4"/>
+
+      <!-- 桌上食材 透視排列 近大遠小 兩側延伸 -->
+      <!-- 近端左：大碗白飯 -->
+      <ellipse cx="52" cy="175" rx="30" ry="12" fill="#1e1e14" stroke="#2a2a1a"/>
+      <ellipse cx="52" cy="170" rx="26" ry="9"  fill="#2e2e22"/>
+      <text x="52" y="173" fill="#666" font-size="7" text-anchor="middle">白飯</text>
+      <!-- 近端右：地瓜 -->
+      <ellipse cx="288" cy="175" rx="26" ry="10" fill="#2a2010" stroke="#3a2e18"/>
+      <text x="288" y="178" fill="#666" font-size="7" text-anchor="middle">地瓜</text>
+      <!-- 中段左：沙拉碗 -->
+      <ellipse cx="100" cy="144" rx="20" ry="8" fill="#102010" stroke="#1a3018"/>
+      <ellipse cx="100" cy="140" rx="17" ry="6" fill="#162814"/>
+      <text x="100" y="143" fill="#555" font-size="6" text-anchor="middle">沙拉</text>
+      <!-- 中段右：雞胸肉 -->
+      <ellipse cx="240" cy="142" rx="18" ry="7" fill="#2a1e10" stroke="#382a18"/>
+      <text x="240" y="145" fill="#555" font-size="6" text-anchor="middle">雞胸</text>
+      <!-- 中遠段左：量杯 -->
+      <rect x="140" y="117" width="12" height="16" rx="2" fill="#222028" stroke="#2e2e38"/>
+      <rect x="141" y="118" width="10" height="8"  rx="1" fill="#1a1a28" opacity="0.7"/>
+      <!-- 中遠段右：碗 -->
+      <ellipse cx="205" cy="122" rx="12" ry="5" fill="#201e14" stroke="#2a2818"/>
+      <!-- 遠端小食材點綴 -->
+      <ellipse cx="158" cy="103" rx="7" ry="3" fill="#1a2810" opacity="0.7"/>
+      <ellipse cx="186" cy="103" rx="6" ry="3" fill="#281e10" opacity="0.7"/>
+
+      <!-- 老師 站在桌子短邊遠端 MCU 落點 -->
+      <!-- 身體 -->
+      <rect x="146" y="52" width="48" height="44" rx="4" fill="#222028"/>
+      <ellipse cx="148" cy="62" rx="12" ry="8" fill="#222028"/>
+      <ellipse cx="192" cy="62" rx="12" ry="8" fill="#222028"/>
+      <!-- 頭 -->
+      <circle cx="170" cy="38" r="20" fill="#2a2820"/>
+      <!-- 頸 -->
+      <rect x="162" y="56" width="16" height="8" rx="3" fill="#2a2820"/>
+      <!-- 板夾 右手持 微傾 -->
+      <rect x="186" y="50" width="20" height="28" rx="2" fill="#1e1c18" stroke="#2e2c24" stroke-width="1" transform="rotate(-8,196,64)"/>
+      <rect x="188" y="53" width="16" height="20" rx="1" fill="#161412" transform="rotate(-8,196,64)"/>
+      <!-- 夾子 -->
+      <rect x="191" y="50" width="10" height="5" rx="1" fill="#2a2820" transform="rotate(-8,196,52)"/>
+      <!-- 右手握板夾 -->
+      <path d="M192,74 Q198,68 200,60" stroke="#2a2820" stroke-width="10" stroke-linecap="round" fill="none"/>
+      <!-- 低頭思考 視線往下 -->
+      <!-- 眉頭略皺暗示 -->
+      <ellipse cx="163" cy="34" rx="6" ry="2" fill="#201e1a" opacity="0.6"/>
+      <ellipse cx="177" cy="34" rx="6" ry="2" fill="#201e1a" opacity="0.6"/>
+
+      <!-- Dolly in 箭頭暗示 畫面底部中央 -->
+      <polygon points="170,192 162,183 178,183" fill="#c8f135" opacity="0.35"/>
+      <line x1="170" y1="183" x2="170" y2="103" stroke="#c8f135" stroke-width="1" stroke-dasharray="3,3" opacity="0.25"/>
     </svg></div>
     <div class="scene-info">
-      <div class="scene-top"><span class="scene-num">#10</span><div class="scene-badges"><span class="badge type-簡報">簡報動畫</span><span class="badge time">4"</span></div></div>
-      <div class="camera-code">對比圖 · 左欄打叉 → 右欄滑入打勾</div>
+      <div class="scene-top"><span class="scene-num">#10</span><div class="scene-badges"><span class="badge type-Broll">B-roll Dolly</span><span class="badge time">4"</span></div></div>
+      <div class="camera-code">Dolly in 沿長桌推進 → 上揚落在老師 MCU · 老師持板夾低頭思考</div>
       <div class="scene-vo">「少動那天少吃碳水，多動那天多吃碳水」</div>
       <div class="scene-post">左欄整欄出現打叉 → 右欄滑入打勾<br>highlight → 少吃碳水 / 多吃碳水 · 重點色</div>
     </div>
@@ -662,9 +709,9 @@
     </svg></div>
     <div class="scene-info">
       <div class="scene-top"><span class="scene-num">#11</span><div class="scene-badges"><span class="badge type-簡報">簡報動畫</span><span class="badge time">4"</span></div></div>
-      <div class="camera-code">週計劃圓環圖 · 七格依序亮起</div>
+      <div class="camera-code">簡報動畫 · 對比圖 · 左欄打叉 → 右欄滑入打勾</div>
       <div class="scene-vo">「高、中、低碳日交替循環」</div>
-      <div class="scene-post">圓環七格隨口白節奏逐一亮起<br>高碳日 一/四/六 · 中碳日 二/五 · 低碳日 三/日<br>highlight → 高、中、低碳日 · 三色對應</div>
+      <div class="scene-post">Dolly in 沿長桌推進，桌上食材兩側流過<br>鏡頭中途上揚，落在老師 MCU<br>老師持板夾低頭思考，帶出科學規劃感</div>
     </div>
   </div>
 
@@ -1091,7 +1138,7 @@
     <div class="scene-info">
       <div class="scene-top"><span class="scene-num">#19</span><div class="scene-badges"><span class="badge type-Broll">B-roll 俯拍</span><span class="badge time">4"</span></div></div>
       <div class="camera-code">俯拍定鏡 · 澱粉四周圍繞沙拉 → 手逐一移走澱粉 → 只剩沙拉</div>
-      <div class="scene-vo">「還有學員靠戒澱粉，」→ 手移走澱粉 →「一開始瘦很快⋯」</div>
+      <div class="scene-vo">「還有學員靠戒澱粉，一開始瘦很快⋯」</div>
       <div class="scene-post">連續動作同一鏡拍攝<br>highlight → 戒澱粉 · 重點色<br>手移走時節奏配合口白，「一開始瘦很快」時桌面接近只剩沙拉</div>
     </div>
   </div>
@@ -1121,7 +1168,7 @@
     <div class="scene-info">
       <div class="scene-top"><span class="scene-num">#20</span><div class="scene-badges"><span class="badge type-Broll">B-roll 俯拍</span><span class="badge time">3"</span></div></div>
       <div class="camera-code">俯拍 · 桌上只剩沙拉 · 手持叉子緩慢入鏡</div>
-      <div class="scene-vo">「⋯一開始瘦很快，」</div>
+      <div class="scene-vo">「⋯對澱粉的渴望越壓越強，」</div>
       <div class="scene-post">壓抑感：乾淨沙拉 + 緩慢入鏡的手<br>highlight → 越壓越強 · 重點色</div>
     </div>
   </div>
@@ -1179,7 +1226,7 @@
     </svg></div>
     <div class="scene-info">
       <div class="scene-top"><span class="scene-num">#21</span><div class="scene-badges"><span class="badge type-Broll">B-roll 過肩</span><span class="badge time">3"</span></div></div>
-      <div class="camera-code">過肩俯視 · 人物深色背影前景虛化 · 手伸進洋芋片袋 · 暖色室內燈光</div>
+      <div class="camera-code">過肩構圖 · 人物背影佔左前景 · 碗裝洋芋片右側清晰</div>
       <div class="scene-vo">「但對澱粉的渴望越壓越強，最後崩潰暴食胖回來」</div>
       <div class="scene-post">鏡頭從肩後上方俯視 · 深色背影虛化佔左前景<br>手從右側入鏡伸入洋芋片袋準備抓取<br>highlight → 崩潰暴食、胖回來 · 重點色</div>
     </div>
